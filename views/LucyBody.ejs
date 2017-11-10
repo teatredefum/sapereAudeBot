@@ -1,0 +1,398 @@
+
+
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right"><%- title %></span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span><%- welcome %> <strong><%-reader %></strong></span><br>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Capítulos</h5>
+  </div>
+  <div class="w3-bar-block">
+    <h6>Parte primera: nube</h6><a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> X</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Redes IP...</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  ... semánticas, web 3.0</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  ... interactivas, web 2.0</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i> ... hipervinculadas, web 1.0</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i> ... conectadas, ARPA.net</a>
+    <h6>Parte segunda: raíces</h6><a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> X</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Cosas IoT...</a>
+    <a href="https://es.wikipedia.org/wiki/Internet_de_las_cosas#Internet_0" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  ... conectadas, Internet 0.</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i> ... hipervinculadas, hiperespacio.</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  ... interactivas, Big Data .</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i> ... semánticas, smarts.</a><br><br>
+  </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> Nube</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-white w3-text-black w3-padding-16">
+          <p><b>Web 3.0</b> es una expresión que se utiliza para describir la evolución del uso y la interacción de las personas en <a href="https://es.wikipedia.org/wiki/Internet" title="Internet">internet</a> a través de diferentes formas entre las que se incluyen la transformación de la red en una <a href="https://es.wikipedia.org/wiki/Base_de_datos" title="Base de datos">base de datos</a>, un movimiento social con el objetivo de crear contenidos accesibles por múltiples aplicaciones <i><a href="https://es.wikipedia.org/w/index.php?title=Non-browser&amp;action=edit&amp;redlink=1" class="new" title="Non-browser (aún no redactado)">non-browser</a></i> (sin navegador), el empuje de las tecnologías de <a href="https://es.wikipedia.org/wiki/Inteligencia_artificial" title="Inteligencia artificial">inteligencia artificial</a>, la <a href="https://es.wikipedia.org/wiki/Web_sem%C3%A1ntica" title="Web semántica">web semántica</a>, la <a href="https://es.wikipedia.org/w/index.php?title=Web_Geoespacial&amp;action=edit&amp;redlink=1" class="new" title="Web Geoespacial (aún no redactado)">Web Geoespacial</a> o la <a href="https://es.wikipedia.org/w/index.php?title=Web_3D&amp;action=edit&amp;redlink=1" class="new" title="Web 3D (aún no redactado)">Web 3D</a>. La expresión es utilizada por los mercados para promocionar las mejoras respecto a la <a href="https://es.wikipedia.org/wiki/Web_2.0" title="Web 2.0">Web 2.0</a>. Esta expresión Web 3.0 apareció por primera vez en <a href="https://es.wikipedia.org/wiki/2006" title="2006">2006</a> en un artículo de <a href="https://es.wikipedia.org/wiki/Jeffrey_Zeldman" title="Jeffrey Zeldman">Jeffrey Zeldman</a>, crítico de la Web 2.0 y asociado a tecnologías como <a href="https://es.wikipedia.org/wiki/AJAX" title="AJAX">AJAX</a>. Actualmente existe un debate considerable en torno a lo que significa Web 3.0, y cuál es la definición más adecuada.<sup id="cite_ref-1" class="reference separada"><a href="#cite_note-1"><span class="corchete-llamada">[</span>1<span class="corchete-llamada">]</span></a></sup>​</p>
+        <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>0</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Web 3.0</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-white w3-text-black w3-padding-16">
+          <p>El término <b>Web 2.0 o Web social</b><sup id="cite_ref-eemEprints_1-0" class="reference separada"><a href="#cite_note-eemEprints-1"><span class="corchete-llamada">[</span>1<span class="corchete-llamada">]</span></a></sup>​ comprende aquellos sitios web que facilitan el compartir información, la <a href="https://es.wikipedia.org/wiki/Interoperabilidad" title="Interoperabilidad">interoperabilidad</a>, el <a href="https://es.wikipedia.org/wiki/Dise%C3%B1o_centrado_en_el_usuario" title="Diseño centrado en el usuario">diseño centrado en el usuario</a> y la <a href="https://es.wikipedia.org/wiki/Colaboraci%C3%B3n" title="Colaboración">colaboración</a> en la <a href="https://es.wikipedia.org/wiki/World_Wide_Web" title="World Wide Web">World Wide Web</a>.</p>
+          <p>Un sitio Web 2.0 permite a los usuarios interactuar y colaborar entre sí, como creadores de contenido, en una <a href="https://es.wikipedia.org/wiki/Comunidad_virtual" title="Comunidad virtual">comunidad virtual</a>. Ejemplos de la Web 2.0 son las comunidades web, los <a href="https://es.wikipedia.org/wiki/Servicio_Web" class="mw-redirect" title="Servicio Web">servicios web</a>, las <a href="https://es.wikipedia.org/wiki/Aplicaci%C3%B3n_Web" class="mw-redirect" title="Aplicación Web">aplicaciones Web</a>, los <a href="https://es.wikipedia.org/wiki/Servicios_de_red_social" class="mw-redirect" title="Servicios de red social">servicios de red social</a>, los <a href="https://es.wikipedia.org/wiki/Servicio_de_alojamiento_de_videos" title="Servicio de alojamiento de videos">servicios de alojamiento de videos</a>, las <a href="https://es.wikipedia.org/wiki/Wikis" class="mw-redirect" title="Wikis">wikis</a>, <a href="https://es.wikipedia.org/wiki/Blogs" class="mw-redirect" title="Blogs">blogs</a>, <i><a href="https://es.wikipedia.org/wiki/Mashup_(aplicaci%C3%B3n_web_h%C3%ADbrida)" title="Mashup (aplicación web híbrida)">mashups</a></i> y <a href="https://es.wikipedia.org/wiki/Folcsonom%C3%ADa" title="Folcsonomía">folcsonomías</a>.</p>
+          <p>La evolución de las aplicaciones, que pasan de ser estáticas a dinámicas, implica la colaboración del usuario.</p>
+          <p>El término Web 2.0 está asociado estrechamente con <a href="https://es.wikipedia.org/wiki/Tim_O%27Reilly" title="Tim O'Reilly">Tim O'Reilly</a>, debido a la conferencia sobre la Web 2.0 de <a href="https://es.wikipedia.org/wiki/O%27Reilly_Media" title="O'Reilly Media">O'Reilly Media</a> en 2004.<sup id="cite_ref-2" class="reference separada"><a href="#cite_note-2"><span class="corchete-llamada">[</span>2<span class="corchete-llamada">]</span></a></sup>​ Aunque el término sugiere una nueva versión de la <a href="https://es.wikipedia.org/wiki/World_Wide_Web" title="World Wide Web">World Wide Web</a>, no se refiere a una actualización de las especificaciones técnicas de la web, sino más bien a cambios acumulativos en la forma en la que <a href="https://es.wikipedia.org/wiki/Desarrollador_de_software" title="Desarrollador de software">desarrolladores de software</a> y <a href="https://es.wikipedia.org/wiki/Usuario_final" title="Usuario final">usuarios finales</a> utilizan la Web.</p>
+          <p>En conclusión, la Web 2.0 nos permite realizar trabajos colaborativos entre varios usuarios o colaboradores. Las herramientas que ofrece la web 2.0 colabora para mejorar los temas en el aula de clase, tanto para docentes como estudiantes y también pueden utilizarse para el trabajo en una <a href="https://es.wikipedia.org/wiki/Empresa" title="Empresa">empresa</a>. El trabajo "colaborativo" está tomando mucha importancia en las actividades que se realizan en <a href="https://es.wikipedia.org/wiki/Internet" title="Internet">Internet</a>.</p>
+        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>0</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Web 2.0</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container  w3-white w3-text-black w3-padding-16">
+          <p>En <a href="https://es.wikipedia.org/wiki/Inform%C3%A1tica" title="Informática">informática</a>, la <b>World Wide Web</b> (<b>WWW</b>) o <b>red informática mundial</b><sup id="cite_ref-1" class="reference separada"><a href="#cite_note-1"><span class="corchete-llamada">[</span>1<span class="corchete-llamada">]</span></a></sup>​ es un <a href="https://es.wikipedia.org/wiki/Sistema_de_informaci%C3%B3n" title="Sistema de información">sistema</a> de distribución de documentos de <a href="https://es.wikipedia.org/wiki/Hipertexto" title="Hipertexto">hipertexto</a> o hipermedios interconectados y accesibles vía <a href="https://es.wikipedia.org/wiki/Internet" title="Internet">Internet</a>. Con un <a href="https://es.wikipedia.org/wiki/Navegador_web" title="Navegador web">navegador web</a>, un usuario visualiza <a href="https://es.wikipedia.org/wiki/Sitio_web" title="Sitio web">sitios web</a> compuestos de <a href="https://es.wikipedia.org/wiki/P%C3%A1gina_web" title="Página web">páginas web</a> que pueden contener <a href="https://es.wikipedia.org/wiki/Textos" class="mw-redirect" title="Textos">textos</a>, <a href="https://es.wikipedia.org/wiki/Imagen_digital" title="Imagen digital">imágenes</a>, <a href="https://es.wikipedia.org/wiki/V%C3%ADdeos" class="mw-redirect" title="Vídeos">vídeos</a> u otros contenidos <a href="https://es.wikipedia.org/wiki/Multimedia" title="Multimedia">multimedia</a>, y navega a través de esas páginas usando <a href="https://es.wikipedia.org/wiki/Hiperenlaces" class="mw-redirect" title="Hiperenlaces">hiperenlaces</a>.</p>
+          <p>La Web se desarrolló entre marzo de <a href="https://es.wikipedia.org/wiki/1989" title="1989">1989</a> y diciembre de <a href="https://es.wikipedia.org/wiki/1990" title="1990">1990</a>.<sup id="cite_ref-2" class="reference separada"><a href="#cite_note-2"><span class="corchete-llamada">[</span>2<span class="corchete-llamada">]</span></a></sup>​<sup id="cite_ref-3" class="reference separada"><a href="#cite_note-3"><span class="corchete-llamada">[</span>3<span class="corchete-llamada">]</span></a></sup>​ por el <a href="https://es.wikipedia.org/wiki/Inglaterra" title="Inglaterra">inglés</a> <a href="https://es.wikipedia.org/wiki/Tim_Berners-Lee" title="Tim Berners-Lee">Tim Berners-Lee</a> con la ayuda del <a href="https://es.wikipedia.org/wiki/B%C3%A9lgica" title="Bélgica">belga</a> <a href="https://es.wikipedia.org/wiki/Robert_Cailliau" title="Robert Cailliau">Robert Cailliau</a> mientras trabajaban en el <a href="https://es.wikipedia.org/wiki/CERN" class="mw-redirect" title="CERN">CERN</a> en <a href="https://es.wikipedia.org/wiki/Ginebra_(ciudad)" class="mw-redirect" title="Ginebra (ciudad)">Ginebra</a>, <a href="https://es.wikipedia.org/wiki/Suiza" title="Suiza">Suiza</a>, y publicado en <a href="https://es.wikipedia.org/wiki/1992" title="1992">1992</a>. Desde entonces, Berners-Lee ha jugado un papel activo guiando el desarrollo de estándares Web (como los <a href="https://es.wikipedia.org/wiki/Lenguaje_de_marcado" title="Lenguaje de marcado">lenguajes de marcado</a> con los que se crean las páginas web), y en los últimos años ha abogado por su visión de una <a href="https://es.wikipedia.org/wiki/Web_sem%C3%A1ntica" title="Web semántica">Web semántica</a>. Utilizando los conceptos de sus anteriores sistemas de hipertexto como ENQUIRE, el físico británico Tim Berners-Lee, un científico de la computación y en ese tiempo de los empleados del CERN, ahora director del <a href="https://es.wikipedia.org/wiki/World_Wide_Web_Consortium" title="World Wide Web Consortium">World Wide Web Consortium</a> (W3C), escribió una propuesta en marzo de 1989 con lo que se convertiría en la World Wide Web.<sup id="cite_ref-AHT_4-0" class="reference separada"><a href="#cite_note-AHT-4"><span class="corchete-llamada">[</span>4<span class="corchete-llamada">]</span></a></sup>​ la propuesta de 1989 fue destinada a un sistema de comunicación CERN pero Berners-Lee finalmente se dio cuenta que el concepto podría aplicarse en todo el mundo.<sup id="cite_ref-5" class="reference separada"><a href="#cite_note-5"><span class="corchete-llamada">[</span>5<span class="corchete-llamada">]</span></a></sup>​ En la CERN, la organización europea de investigación cerca de Ginebra, en la frontera entre <a href="https://es.wikipedia.org/wiki/Francia" title="Francia">Francia</a> y <a href="https://es.wikipedia.org/wiki/Suiza" title="Suiza">Suiza</a>,<sup id="cite_ref-6" class="reference separada"><a href="#cite_note-6"><span class="corchete-llamada">[</span>6<span class="corchete-llamada">]</span></a></sup>​ Berners-Lee y el científico de la computación belga <a href="https://es.wikipedia.org/wiki/Robert_Cailliau" title="Robert Cailliau">Robert Cailliau</a> propusieron en 1990 utilizar el hipertexto "para vincular y acceder a información de diversos tipos como una red de nodos en los que el usuario puede navegar a voluntad",<sup id="cite_ref-W90_7-0" class="reference separada"><a href="#cite_note-W90-7"><span class="corchete-llamada">[</span>7<span class="corchete-llamada">]</span></a></sup>​ y Berners-Lee terminó el primer sitio web en diciembre de ese año.<sup id="cite_ref-8" class="reference separada"><a href="#cite_note-8"><span class="corchete-llamada">[</span>8<span class="corchete-llamada">]</span></a></sup>​ Berners-Lee publicó el proyecto en el grupo de noticias alt.hypertext el 7 de agosto de 1991.<sup id="cite_ref-9" class="reference separada"><a href="#cite_note-9"><span class="corchete-llamada">[</span>9<span class="corchete-llamada">]</span></a></sup>​</p>
+        <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
+
+        <div class="w3-right">
+          <h3>0</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Web</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-white w3-text-black w3-padding-16">
+          <p><b>ARPANET</b> fue una <a href="https://es.wikipedia.org/wiki/Red_de_computadoras" title="Red de computadoras">red de computadoras</a> creada por encargo del <a href="https://es.wikipedia.org/wiki/Departamento_de_Defensa_de_los_Estados_Unidos" title="Departamento de Defensa de los Estados Unidos">Departamento de Defensa de los Estados Unidos</a> (DOD) para utilizarla como medio de comunicación entre las diferentes instituciones académicas y estatales. El primer <a href="https://es.wikipedia.org/wiki/Nodo_(inform%C3%A1tica)" title="Nodo (informática)">nodo</a> fue creado en la <a href="https://es.wikipedia.org/wiki/Universidad_de_California_en_Los_%C3%81ngeles" title="Universidad de California en Los Ángeles">Universidad de California en Los Ángeles</a> (UCLA), y fue la espina dorsal de <a href="https://es.wikipedia.org/wiki/Internet" title="Internet">Internet</a> hasta 1990, tras finalizar la transición al protocolo <a href="https://es.wikipedia.org/wiki/Modelo_TCP/IP" title="Modelo TCP/IP">TCP/IP</a>, iniciada en <a href="https://es.wikipedia.org/wiki/1983" title="1983">1983</a>.</p>
+          <p>ARPANET son las siglas de Advanced Research Projects Agency Network, es decir, la Red de la Agencia de Proyectos de Investigación Avanzada,<sup id="cite_ref-1" class="reference separada"><a href="#cite_note-1"><span class="corchete-llamada">[</span>1<span class="corchete-llamada">]</span></a></sup>​ organismo conocido ahora como <a href="https://es.wikipedia.org/wiki/Agencia_de_Proyectos_de_Investigaci%C3%B3n_Avanzados_de_Defensa" class="mw-redirect" title="Agencia de Proyectos de Investigación Avanzados de Defensa">Agencia de Proyectos de Investigación Avanzados de Defensa</a>.</p>
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>0</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>ARPA.net</h4>
+      </div>
+    </div>
+  </div>
+
+   <!-- Header -->
+   <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> Raíces</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-black w3-text-white w3-padding-16">
+          <p><b>Internet de las cosas</b> (en <a href="https://es.wikipedia.org/wiki/Idioma_ingl%C3%A9s" title="Idioma inglés">inglés</a>, <span xml:lang="en" lang="en"><i>Internet of things</i></span>, abreviado <i>IoT</i>)<sup id="cite_ref-1" class="reference separada"><a href="#cite_note-1"><span class="corchete-llamada">[</span>1<span class="corchete-llamada">]</span></a></sup>​<sup id="cite_ref-2" class="reference separada"><a href="#cite_note-2"><span class="corchete-llamada">[</span>2<span class="corchete-llamada">]</span></a></sup>​ es un concepto que se refiere a la <a href="https://es.wikipedia.org/wiki/Red_de_computadoras" title="Red de computadoras">interconexión</a> digital de objetos cotidianos con <a href="https://es.wikipedia.org/wiki/Internet" title="Internet">internet</a>.<sup id="cite_ref-Conner_3-0" class="reference separada"><a href="#cite_note-Conner-3"><span class="corchete-llamada">[</span>3<span class="corchete-llamada">]</span></a></sup>​ Alternativamente, Internet de las cosas es la conexión de Internet con más “cosas u objetos” que personas.<sup id="cite_ref-4" class="reference separada"><a href="#cite_note-4"><span class="corchete-llamada">[</span>4<span class="corchete-llamada">]</span></a></sup>​ También se suele conocer como internet de <i>todas</i> las cosas o internet <i>en</i> las cosas. Si objetos de la vida cotidiana tuvieran incorporadas <a href="https://es.wikipedia.org/wiki/Etiqueta_RFID" title="Etiqueta RFID">etiquetas de radio</a>, podrían ser identificados y gestionados por otros equipos, de la misma manera que si lo fuesen por seres humanos.<sup id="cite_ref-5" class="reference separada"><a href="#cite_note-5"><span class="corchete-llamada">[</span>5<span class="corchete-llamada">]</span></a></sup>​<sup id="cite_ref-EC.2C_Action_plan_for_Europe_6-0" class="reference separada"><a href="#cite_note-EC.2C_Action_plan_for_Europe-6"><span class="corchete-llamada">[</span>6<span class="corchete-llamada">]</span></a></sup>​</p>
+          <p>El concepto de internet de las cosas fue propuesto por Kevin Ashton en el Auto-ID Center del <a href="https://es.wikipedia.org/wiki/MIT" class="mw-redirect" title="MIT">MIT</a> en <a href="https://es.wikipedia.org/wiki/1999" title="1999">1999</a>,<sup id="cite_ref-7" class="reference separada"><a href="#cite_note-7"><span class="corchete-llamada">[</span>7<span class="corchete-llamada">]</span></a></sup>​ donde se realizaban investigaciones en el campo de la identificación por radiofrecuencia en red (<a href="https://es.wikipedia.org/wiki/RFID" title="RFID">RFID</a>) y tecnologías de sensores.<sup id="cite_ref-Dodson_2003_8-0" class="reference separada"><a href="#cite_note-Dodson_2003-8"><span class="corchete-llamada">[</span>8<span class="corchete-llamada">]</span></a></sup>​</p>
+          <p>Por ejemplo, si los libros, <a href="https://es.wikipedia.org/wiki/Termostato" title="Termostato">termostatos</a>, refrigeradores, la <a href="https://es.wikipedia.org/wiki/Paquete" title="Paquete">paquetería</a>, lámparas, <a href="https://es.wikipedia.org/wiki/Botiqu%C3%ADn" title="Botiquín">botiquines</a>, partes automotrices, entre otros estuvieran conectados a Internet y equipados con dispositivos de identificación, no existirían, en teoría, artículos fuera de <a href="https://es.wikipedia.org/wiki/Inventario" title="Inventario">stock</a> o medicinas <a href="https://es.wikipedia.org/wiki/Fecha_de_caducidad" title="Fecha de caducidad">caducadas</a>; sabríamos exactamente la ubicación, cómo se consumen en el mundo; el extravío sería cosa del pasado y sabríamos qué está encendido o apagado en todo momento.<sup id="cite_ref-9" class="reference separada"><a href="#cite_note-9"><span class="corchete-llamada">[</span>9<span class="corchete-llamada">]</span></a></sup>​<sup id="cite_ref-10" class="reference separada"><a href="#cite_note-10"><span class="corchete-llamada">[</span>10<span class="corchete-llamada">]</span></a></sup>​</p>
+          <p>El internet de las cosas debería codificar de 50 a 100&nbsp;000 mil millones de objetos y seguir el movimiento de estos; puesto que se calcula que todo ser humano está rodeado de por lo menos de 1000 a 5000 objetos,.<sup id="cite_ref-Waldner.2C_2007_11-0" class="reference separada"><a href="#cite_note-Waldner.2C_2007-11"><span class="corchete-llamada">[</span>11<span class="corchete-llamada">]</span></a></sup>​<sup id="cite_ref-12" class="reference separada"><a href="#cite_note-12"><span class="corchete-llamada">[</span>12<span class="corchete-llamada">]</span></a></sup>​ Según la empresa <a href="https://es.wikipedia.org/wiki/Gartner_(empresa)" title="Gartner (empresa)">Gartner</a>, en 2020<sup id="cite_ref-9700_millones_de_objetos_conectados_13-0" class="reference separada"><a href="#cite_note-9700_millones_de_objetos_conectados-13"><span class="corchete-llamada">[</span>13<span class="corchete-llamada">]</span></a></sup>​ habrá en el mundo aproximadamente 26 mil millones de dispositivos con un sistema de conexión al internet de las cosas.<sup id="cite_ref-14" class="reference separada"><a href="#cite_note-14"><span class="corchete-llamada">[</span>14<span class="corchete-llamada">]</span></a></sup>​ Abi Research, por otro lado, asegura que para el mismo año existirán 30 mil millones de dispositivos inalámbricos conectados al Internet.<sup id="cite_ref-15" class="reference separada"><a href="#cite_note-15"><span class="corchete-llamada">[</span>15<span class="corchete-llamada">]</span></a></sup>​Con la próxima generación de aplicaciones de Internet (protocolo <a href="https://es.wikipedia.org/wiki/IPv6" title="IPv6">IPv6</a>) se podrían identificar todos los objetos, algo que no se podía hacer con <a href="https://es.wikipedia.org/wiki/IPv4" title="IPv4">IPv4</a>. Este sistema sería capaz de identificar instantáneamente por medio de un código a cualquier tipo de objeto.<sup id="cite_ref-Waldner.2C_2008_16-0" class="reference separada"><a href="#cite_note-Waldner.2C_2008-16"><span class="corchete-llamada">[</span>16<span class="corchete-llamada">]</span></a></sup>​</p>
+        <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>0</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>IoT</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-black w3-text-white w3-padding-16">
+          <p><i><b>Big data</b></i>, <b>macrodatos</b>,<sup id="cite_ref-1" class="reference separada"><a href="#cite_note-1"><span class="corchete-llamada">[</span>1<span class="corchete-llamada">]</span></a></sup>​ <b>datos masivos</b>, <b>inteligencia de datos</b> o <b>datos a gran escala</b> es un concepto que hace referencia a un <a href="https://es.wikipedia.org/wiki/Conjuntos_de_datos" class="mw-redirect" title="Conjuntos de datos">conjuntos de datos</a> tan grandes que <a href="https://es.wikipedia.org/wiki/Aplicaci%C3%B3n_inform%C3%A1tica" title="Aplicación informática">aplicaciones informáticas</a> tradicionales de <a href="https://es.wikipedia.org/wiki/Procesamiento_de_datos" title="Procesamiento de datos">procesamiento de datos</a> no son suficientes para tratar con ellos y los procedimientos usados para encontrar patrones repetitivos dentro de esos datos. Los textos científicos en español con frecuencia se usa directamente el término en inglés <i>big data</i>, tal como aparece en el ensayo de Viktor Schönberger<i>: La revolución de los datos masivos</i>.<sup id="cite_ref-2" class="reference separada"><a href="#cite_note-2"><span class="corchete-llamada">[</span>2<span class="corchete-llamada">]</span></a></sup>​</p>
+          <p>La disciplina dedicada a los datos masivos se enmarca en el sector de las <a href="https://es.wikipedia.org/wiki/Tecnolog%C3%ADas_de_la_informaci%C3%B3n_y_la_comunicaci%C3%B3n" title="Tecnologías de la información y la comunicación">tecnologías de la información y la comunicación</a>. Esta disciplina se ocupa de todas las actividades relacionadas con los sistemas que manipulan grandes <a href="https://es.wikipedia.org/wiki/Conjunto_de_datos" title="Conjunto de datos">conjuntos de datos</a>. Las dificultades más habituales vinculadas a la gestión de estas cantidades de datos se centran en la recolección y el almacenamiento,<sup id="cite_ref-3" class="reference separada"><a href="#cite_note-3"><span class="corchete-llamada">[</span>3<span class="corchete-llamada">]</span></a></sup>​ búsqueda, compartición, análisis,<sup id="cite_ref-4" class="reference separada"><a href="#cite_note-4"><span class="corchete-llamada">[</span>4<span class="corchete-llamada">]</span></a></sup>​ y visualización. La tendencia a manipular enormes cantidades de datos se debe a la necesidad en muchos casos de incluir dicha información para la creación de informes estadísticos y modelos predictivos utilizados en diversas materias, como los análisis de negocio, publicitarios, los datos de enfermedades infecciosas, el espionaje y seguimiento a la población o la lucha contra el crimen organizado.<sup id="cite_ref-5" class="reference separada"><a href="#cite_note-5"><span class="corchete-llamada">[</span>5<span class="corchete-llamada">]</span></a></sup>​</p>
+        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>0</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Big Data</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-black w3-black w3-text-white w3-padding-16">
+          <p>La <b>inteligencia artificial</b> (<b>IA</b>), también llamada <b>inteligencia computacional</b>, es la inteligencia exhibida por máquinas. En <a href="https://es.wikipedia.org/wiki/Ciencias_de_la_computaci%C3%B3n" title="Ciencias de la computación">ciencias de la computación</a>, una máquina «inteligente» ideal es un agente racional flexible que percibe su entorno y lleva a cabo acciones que maximicen sus posibilidades de éxito en algún objetivo o tarea.<sup id="cite_ref-1" class="reference separada"><a href="#cite_note-1"><span class="corchete-llamada">[</span>1<span class="corchete-llamada">]</span></a></sup>​<sup id="cite_ref-2" class="reference separada"><a href="#cite_note-2"><span class="corchete-llamada">[</span>2<span class="corchete-llamada">]</span></a></sup>​<sup id="cite_ref-3" class="reference separada"><a href="#cite_note-3"><span class="corchete-llamada">[</span>3<span class="corchete-llamada">]</span></a></sup>​<sup id="cite_ref-4" class="reference separada"><a href="#cite_note-4"><span class="corchete-llamada">[</span>4<span class="corchete-llamada">]</span></a></sup>​ Coloquialmente, el término inteligencia artificial se aplica cuando una máquina imita las funciones «cognitivas» que los humanos asocian con otras mentes humanas, como por ejemplo: "aprender" y "resolver problemas". <sup id="cite_ref-FOOTNOTERussellNorvig20092_5-0" class="reference separada"><a href="#cite_note-FOOTNOTERussellNorvig20092-5"><span class="corchete-llamada">[</span>5<span class="corchete-llamada">]</span></a></sup>​ A medida que las máquinas se vuelven cada vez más capaces, tecnología que alguna vez se pensó que requería de inteligencia se elimina de la definición. Por ejemplo, el reconocimiento óptico de caracteres ya no se percibe como un ejemplo de la "inteligencia artificial" habiéndose convertido en una tecnología común.<sup id="cite_ref-6" class="reference separada"><a href="#cite_note-6"><span class="corchete-llamada">[</span>6<span class="corchete-llamada">]</span></a></sup>​ Avances tecnológicos todavía clasificados como inteligencia artificial son los sistemas capaces de jugar ajedrez, GO y manejar por si mismos.</p>
+          <p>En 1956, <a href="https://es.wikipedia.org/wiki/John_McCarthy" title="John McCarthy">John McCarthy</a> acuñó la expresión «inteligencia artificial», y la definió como: "...la ciencia e ingenio de hacer máquinas inteligentes, especialmente <a href="https://es.wikipedia.org/wiki/Sistema_inteligente" title="Sistema inteligente">programas de cómputo inteligentes</a>".<sup id="cite_ref-7" class="reference separada"><a href="#cite_note-7"><span class="corchete-llamada">[</span>7<span class="corchete-llamada">]</span></a></sup>​</p>
+          <p>Para <a href="https://es.wikipedia.org/wiki/Nils_John_Nilsson" title="Nils John Nilsson">Nils John Nilsson</a> son cuatro los pilares básicos en los que se apoya la inteligencia artificial:</p>
+          <ul>
+          <li>Búsqueda del estado requerido en el conjunto de los estados producidos por las acciones posibles.</li>
+          <li><a href="https://es.wikipedia.org/wiki/Algoritmo_gen%C3%A9tico" title="Algoritmo genético">Algoritmos genéticos</a> (análogo al proceso de evolución de las cadenas de ADN).</li>
+          <li><a href="https://es.wikipedia.org/wiki/Red_neuronal_artificial" title="Red neuronal artificial">Redes neuronales artificiales</a> (análogo al funcionamiento físico del cerebro de animales y humanos).</li>
+          <li><a href="https://es.wikipedia.org/wiki/Razonamiento" title="Razonamiento">Razonamiento</a> mediante una <a href="https://es.wikipedia.org/wiki/L%C3%B3gica_formal" title="Lógica formal">lógica formal</a> análogo al pensamiento abstracto humano.</li>
+          </ul>
+          <p>También existen distintos tipos de percepciones y acciones, que pueden ser obtenidas y producidas, respectivamente, por sensores físicos y sensores mecánicos en máquinas, pulsos eléctricos u ópticos en computadoras, tanto como por entradas y salidas de bits de un software y su entorno software.</p>
+          <p>Varios ejemplos se encuentran en el área de <a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_control" class="mw-redirect" title="Teoría de control">control de sistemas</a>, <a href="https://es.wikipedia.org/wiki/Planificaci%C3%B3n_autom%C3%A1tica" title="Planificación automática">planificación automática</a>, la habilidad de responder a diagnósticos y a consultas de los consumidores, <a href="https://es.wikipedia.org/wiki/Reconocimiento_de_escritura" title="Reconocimiento de escritura">reconocimiento de escritura</a>, <a href="https://es.wikipedia.org/wiki/Reconocimiento_del_habla" title="Reconocimiento del habla">reconocimiento del habla</a> y <a href="https://es.wikipedia.org/wiki/Reconocimiento_de_patrones" title="Reconocimiento de patrones">reconocimiento de patrones</a>. Los sistemas de IA actualmente son parte de la rutina en campos como <a href="https://es.wikipedia.org/wiki/Econom%C3%ADa" title="Economía">economía</a>, <a href="https://es.wikipedia.org/wiki/Medicina" title="Medicina">medicina</a>, <a href="https://es.wikipedia.org/wiki/Ingenier%C3%ADa" title="Ingeniería">ingeniería</a> y la <a href="https://es.wikipedia.org/wiki/Milicia" title="Milicia">milicia</a>, y se ha usado en gran variedad de aplicaciones de <a href="https://es.wikipedia.org/wiki/Software" title="Software">software</a>, juegos de estrategia, como <a href="https://es.wikipedia.org/wiki/Ajedrez" title="Ajedrez">ajedrez</a> de computador, y otros <a href="https://es.wikipedia.org/wiki/Videojuegos" class="mw-redirect" title="Videojuegos">videojuegos</a>.</p>
+          
+        <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>0</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Smart</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-black w3-text-white w3-padding-16">
+          <p>El <b>test de Turing</b> (o <b>prueba de Turing</b>) es una prueba de la habilidad de una máquina de exhibir un comportamiento inteligente similar, o indistinguible al de un humano. <a href="https://es.wikipedia.org/wiki/Alan_Turing" title="Alan Turing">Alan Turing</a> propuso que un humano evaluara conversaciones en lenguaje natural entre un humano y una máquina diseñada para generar respuestas similares a las de un humano. El evaluador sabría que uno de los miembros de la conversación es una máquina y todos los participantes serían separados de otros. La conversación estaría limitada a un medio únicamente textual como un <a href="https://es.wikipedia.org/wiki/Teclado_de_computadora" class="mw-redirect" title="Teclado de computadora">teclado de computadora</a> y un <a href="https://es.wikipedia.org/wiki/Monitor_de_computadora" title="Monitor de computadora">monitor</a> por lo que sería irrelevante la capacidad de la máquina de transformar texto en habla.<sup id="cite_ref-2" class="reference separada"><a href="#cite_note-2"><span class="corchete-llamada">[</span>2<span class="corchete-llamada">]</span></a></sup>​ En el caso de que el evaluador no pueda distinguir entre el humano y la máquina acertadamente (Turing originalmente sugirió que la máquina debía convencer a un evaluador, después de 5 minutos de conversación, el 70&nbsp;% del tiempo), la máquina habría pasado la prueba. Esta prueba no evalúa el conocimiento de la máquina en cuanto a su capacidad de responder preguntas correctamente, solo se toma en cuenta la capacidad de ésta de generar respuestas similares a las que daría un humano.</p>
+          <p>Turing propuso esta prueba en su ensayo “<a href="https://es.wikipedia.org/wiki/Computing_machinery_and_intelligence" title="Computing machinery and intelligence">Computing Machinery and Intelligence</a>” de 1950 mientras trabajaba en la <a href="https://es.wikipedia.org/wiki/Universidad_de_M%C3%A1nchester" title="Universidad de Mánchester">Universidad de Mánchester</a> (Turing, 1950; p. 460).<sup id="cite_ref-3" class="reference separada"><a href="#cite_note-3"><span class="corchete-llamada">[</span>3<span class="corchete-llamada">]</span></a></sup>​ Inicia con las palabras: “Propongo que se considere la siguiente pregunta, ‘¿Pueden pensar las máquinas?’”. Como es difícil definir la palabra “pensar”, Turing decide “reemplazar la pregunta con otra que está estrechamente relacionada y en palabras no ambiguas.”, <sup id="cite_ref-FOOTNOTETuring1950433_4-0" class="reference separada"><a href="#cite_note-FOOTNOTETuring1950433-4"><span class="corchete-llamada">[</span>4<span class="corchete-llamada">]</span></a></sup>​ la nueva pregunta de Turing es: “¿Existirán computadoras digitales imaginables que tengan un buen desempeño en el juego de imitación?".<sup id="cite_ref-5" class="reference separada"><a href="#cite_note-5"><span class="corchete-llamada">[</span>5<span class="corchete-llamada">]</span></a></sup>​ Turing creía que esta pregunta sí era posible de responder y en lo que resta de su ensayo se dedica a argumentar en contra de las objeciones principales a la idea de que “las máquinas pueden pensar”.<sup id="cite_ref-Turing.27s_nine_objections_6-0" class="reference separada"><a href="#cite_note-Turing.27s_nine_objections-6"><span class="corchete-llamada">[</span>6<span class="corchete-llamada">]</span></a></sup>​</p>
+          <p>Desde 1950, la prueba ha servido de influencia y criticada, además de ser esencial en el concepto de la filosofía de la inteligencia artificial.<sup id="cite_ref-FOOTNOTESaygin2000_1-1" class="reference separada"><a href="#cite_note-FOOTNOTESaygin2000-1"><span class="corchete-llamada">[</span>1<span class="corchete-llamada">]</span></a></sup>​<sup id="cite_ref-FOOTNOTERussellNorvig20032.E2.80.933_and_948_7-0" class="reference separada"><a href="#cite_note-FOOTNOTERussellNorvig20032.E2.80.933_and_948-7"><span class="corchete-llamada">[</span>7<span class="corchete-llamada">]</span></a></sup>​</p>
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>0</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Pruebas de conciencia</h4>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="w3-panel">
+        <div class="w3-row-padding" style="margin:0 -16px">
+        
+            <div class="w3-twothird">
+                <h5>(EN) Cloud </h5>
+                <table class="w3-table w3-striped w3-white">
+                    <tr>
+                        <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
+                        <td><strong>Sapere Aude</strong>, a MEAN web app. Kind of Alice.</td>
+                        <td><i>sparql, aiml, d3js</i></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
+                        <td><strong>Indarkhabitant</strong>, an platform-agnostic avatar tool.</td>
+                        <td><i>Virtual identities, GPG, LAMP, social networks</i></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
+                        <td><strong>Kurreal world</strong>, a cibercampus.</td>
+                        <td><i>Impress.js, university, e-learning </i></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
+                        <td><strong>Aleph-1</strong>, an audio chat room.</td>
+                        <td><i>conferece, forum, communications, Asterix/Python </i></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="w3-twothird">
+                <h5>(EN) Ground</h5>
+                <table class="w3-table w3-striped w3-white">
+                    <tr>
+                        <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
+                        <td><strong>Orfeo</strong>, a rasbian pet for kids.</td>
+                        <td><i>modbus, openhab, bash, risky-toy</i></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
+                        <td><strong>Martin Magic mem</strong>, a personal computer.</td>
+                        <td><i>criptogrhaphy, blockchain, universal machine, mptt</i></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
+                        <td><strong>Lucy</strong>, a virtual assistant</td>
+                        <td><i>smart, ia, knx, inmotics</i></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
+                        <td><strong>The word that spreads the machine</strong>, a scape game for bots (story board).</td>
+                        <td><i>Turing test, cicada, anthropologie</i></td>
+                    </tr>        
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+  <div class="w3-container">
+    <h5>Lab</h5>
+    <p>Biblioteca</p>
+     <a href="http://aleph1888.github.io/ataraxia_archive/">expositor</a>
+    <div class="w3-grey">
+      <div class="w3-container w3-center w3-padding w3-black w3-text-white" style="width:25%">5%</div>
+    </div>
+
+    <p>Foro</p>
+    <a href="http://dtimb.ismy.band/devcrew/">Entrar</a>
+    <div class="w3-grey">     
+      <div class="w3-container w3-center w3-padding  w3-black w3-text-white" style="width:25%">5%</div>
+    </div>
+
+    <p>Aulas</p>
+      <a href="http://ihttp://ismy.band/lakurrealidad/facultad.html">Acceso</a>
+    <div class="w3-grey">
+      <div class="w3-container w3-center w3-padding w3-black w3-text-white" style="width:25%">5%</div>
+    </div>
+
+    <p>Estudio</p>
+    Fuera de línea
+    <div class="w3-grey">      
+      <div class="w3-container w3-center w3-padding  w3-black w3-text-white" style="width:1%">1%</div>
+    </div>
+
+  </div>
+  <hr>
+
+  <div class="w3-container">
+    <h5>Habitantes</h5>
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+      <tr>
+        <td>Gallardo N. B., matemático.</td>
+        <td>Independiente</td>
+      </tr>
+      <tr>
+        <td>Juan de Mairena C., sabio.</td>
+        <td>Escuela Superior de Sabiduría Popular</td>
+      </tr>
+      <tr>
+        <td>Maríaceta Moliner S., académica.</td>
+        <td>Popular Academia de las Letras españolas</td>
+      </tr>
+      <tr>
+        <td>Emiaj S. T, físico cuántico.</td>
+        <td>Independiente</td>
+      </tr>
+      <tr>
+        <td>Efestión S. G., gastrónomo.</td>
+        <td>Asamblea de Cocinas Populares de tradición neomediterránea y antepirenaica.</td>
+      </tr>
+      <tr>
+        <td>Alejandra N. D., bióloga.</td>
+        <td>Nieta de Hijas de Plaza de mayo.</td>
+      </tr>
+    </table><br>
+    <button class="w3-button w3-dark-grey">Páginas amarillas...  <i class="fa fa-arrow-right"></i></button>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Áreas de comunicación</h5>
+    <ul class="w3-ul w3-card-4 w3-white">
+      <li class="w3-padding-16">
+        <img src="/w3images/avatar2.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
+        <span class="w3-xlarge">Secretaría</span><br>
+      </li>
+      <li class="w3-padding-16">
+        <img src="/w3images/avatar5.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
+        <span class="w3-xlarge">Gremio TIC/NTIC</span><br>
+      </li>
+      <li class="w3-padding-16">
+        <img src="/w3images/avatar6.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
+        <span class="w3-xlarge">Gremio IoT/smart</span><br>
+      </li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="w3-container">
+    <h5>Areas de divulgación</h5>
+    <div class="w3-row">
+      <div class="w3-col m2 text-center">
+        <img class="w3-circle" src="/w3images/avatar3.png" style="width:96px;height:96px">
+      </div>
+      <div class="w3-col m10 w3-container">
+        <h4>SCRUM <span class="w3-opacity w3-medium">lab</span></h4>
+        <p>Tableros y pilas de producto.</p><br>
+      </div>
+    </div>
+
+    <div class="w3-row">
+      <div class="w3-col m2 text-center">
+        <img class="w3-circle" src="/w3images/avatar1.png" style="width:96px;height:96px">
+      </div>
+      <div class="w3-col m10 w3-container">
+        <h4>Repositorios <span class="w3-opacity w3-medium">git/maven</span></h4>
+        <p><a href="https://github.com/teatredefum">Paquetes y bibliotecas</a>.</p><br>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="w3-container w3-dark-grey w3-padding-32">
+    <div class="w3-row">
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-orange">Proyectos</h5>
+        <p>Liberados</p>
+        <p>Fabricación</p>
+        <p>Prototipos</p>
+      </div>
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-orange">Documentación</h5>
+        <p>Libros y Manuales</p>
+        <p>Mantenimiento y certificación</p>
+        <p>Catálogos y presupuestos</p>
+      </div>
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-orange">Editorial</h5>
+        <p><a href="http://revistero.teatredefum.net/?q=Comunicado+filosof%C3%ADa">Comunicados filosofía</a></p>
+        <p><a href="http://revistero.teatredefum.net/?q=Comunicado+infraestructura">Comunicados infraestructura</a</p>
+        <p><a href="http://revistero.teatredefum.net/?q=Comunicado+actualidad">Comunicados actualidad</a</p>
+        <p><a href="http://revistero.teatredefum.net/?q=Comunicado">Archivo de comunicados</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4>Grupo TeatreDeFum</h4>
+    <p>Creative Commons <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+     
+        e-Artesania, Ataraxia Archive, Kinrazip Design (2017)
+        
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
