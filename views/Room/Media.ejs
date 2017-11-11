@@ -1,0 +1,17 @@
+<li class="media">
+	<div class="media-body">
+		<div class="media">
+			
+			<a class="pull-left" href=<%= message.mLink %>>
+					<img class="media-object img-circle " src="images/<%= message.mAvatar %>" />
+			</a>
+			<div class="media-body">
+					<%- message.mText %>
+				<br />
+				<small class="text-muted"><%= message.mAuthor %> | <%= message.mTime %></small>
+				<hr />
+			</div>
+		</div>
+
+	</div>
+</li>

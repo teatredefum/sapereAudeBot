@@ -1,4 +1,4 @@
-  function Message(author, text, time, avatar){
+  function Being(author, text, time, avatar){
     
       this.mAuthor = author;
       this.mText = text;
@@ -7,5 +7,5 @@
     
     }
 
-    module.exports = Message;
+    module.exports = Being;
 
