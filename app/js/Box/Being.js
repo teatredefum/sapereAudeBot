@@ -1,8 +1,8 @@
-  function Being(author, text, time, avatar){
+  function Being(author, text, skill, avatar){
     
       this.mAuthor = author;
       this.mText = text;
-      this.mTime = time;
+      this.mSkill = skill;
       this.mAvatar = avatar;
     
     }

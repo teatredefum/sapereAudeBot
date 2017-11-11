@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<aiml version = "1.0.1" encoding = "UTF-8">
+   <category>
+      <pattern>Lucy, canta</pattern>      
+      <template>So close, no matters how far...</template>      
+   </category>
+   <category>
+      <pattern> * </pattern>      
+      <template>Quiero cantar. Dime: Lucy, canta.</template>      
+   </category>   
+</aiml>

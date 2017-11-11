@@ -1,20 +1,63 @@
+<% engine.Ui({}) %>
 <div class="container">
     <div class="row">
-        <h3 class="text-center">Lucy v.0.0.0</h3>    
-        <div class="col-md-4">
-            <div class="panel panel-default">
+        <div class="col-md-5">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
-                        <%= captions.talk.beingsTitle %>
+                    <span class="glyphicon glyphicon-comment"></span>
+                    <%= captions.talk.lucyContext %>
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                            </button>
+                            <ul class="dropdown-menu slidedown">
+                                <li>
+                                    <a href="">
+                                        <span class="glyphicon glyphicon-refresh">
+                                        </span>Refresh</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.jquery2dotnet.com">
+                                        <span class="glyphicon glyphicon-ok-sign">
+                                        </span>Available</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.jquery2dotnet.com">
+                                        <span class="glyphicon glyphicon-remove">
+                                        </span>Busy</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.jquery2dotnet.com">
+                                        <span class="glyphicon glyphicon-time"></span>
+                                        Away</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="http://www.jquery2dotnet.com">
+                                        <span class="glyphicon glyphicon-off"></span>
+                                        Sign Out</a>
+                                </li>
+                            </ul>
+                        </div>
                 </div>
                 <div class="panel-body">
-                    <ul class="media-list">
-                        <%for (var message in beings){%>
+                    <ul class="chat">
+                        <%for (var message in messages){%>
 
-                            <% message= beings[message]%>
-                            <%= include Being.ejs %>
-
-                        <%}%>
+                            <% message= chat[message]%>
+                                <%= include Message.ejs %>
+                            <%}%>
                     </ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" class="form-control input-sm" placeholder="<%= captions.talk.sendPlaceholder %>" type="text">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-sm" id="btn-chat">
+                                <%= captions.talk.sendButton %>
+                            </button>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -23,63 +66,21 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-5">
-            <div class="panel panel-primary">
+        <h3 class="text-center">Lucy v.0.0.0</h3>
+        <div class="col-md-4">
+            <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="glyphicon glyphicon-comment"></span>  <%= captions.talk.lucyContext %>
-                    <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                        </button>
-                        <ul class="dropdown-menu slidedown">
-                            <li>
-                                <a href="http://www.jquery2dotnet.com">
-                                    <span class="glyphicon glyphicon-refresh">
-                                    </span>Refresh</a>
-                            </li>
-                            <li>
-                                <a href="http://www.jquery2dotnet.com">
-                                    <span class="glyphicon glyphicon-ok-sign">
-                                    </span>Available</a>
-                            </li>
-                            <li>
-                                <a href="http://www.jquery2dotnet.com">
-                                    <span class="glyphicon glyphicon-remove">
-                                    </span>Busy</a>
-                            </li>
-                            <li>
-                                <a href="http://www.jquery2dotnet.com">
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    Away</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="http://www.jquery2dotnet.com">
-                                    <span class="glyphicon glyphicon-off"></span>
-                                    Sign Out</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <%= captions.talk.beingsTitle %>
                 </div>
                 <div class="panel-body">
-                    <ul class="chat">
-                        <%for (var message in messages){%>
+                    <ul class="media-list">
+                        <%for (var message in beings){%>
 
-                            <% message= chat[message]%>
-                            <%= include Message.ejs %>
+                            <% message= beings[message]%>
+                                <%= include Being.ejs %>
 
-                        <%}%>
+                                    <%}%>
                     </ul>
-                </div>
-                <div class="panel-footer">
-                    <div class="input-group">
-                        <input id="btn-input" class="form-control input-sm" placeholder="<%= captions.talk.sendPlaceholder %>" type="text">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default btn-sm" id="btn-chat">
-                                    <%= captions.talk.sendButton %>
-                            </button>
-                        </span>
-                    </div>
                 </div>
             </div>
         </div>

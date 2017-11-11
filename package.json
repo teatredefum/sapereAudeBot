@@ -1,7 +1,7 @@
 {
-  "name": "sapereAude",
-  "version": "0.0.0",
-  "description": "An Alice bot that...",
+  "name": "teatredefum.net",
+  "version": "1.0.0",
+  "description": "screen",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/teatredefum/sapereAudeBot.git"
+    "url": "ssh+git://8605288@git.dc0.gpaas.net/default.git"
   },
   "keywords": [
     "show",
@@ -20,7 +20,9 @@
   "license": "ISC",
   "dependencies": {
     "aiml": "0.0.2",
+    "aiml-high": "0.0.8",
     "body-parser": "^1.17.0",
+    "debug": "^3.1.0",
     "ejs": "^2.5.6",
     "ejs-locals": "^1.0.2",
     "errorhandler": "^1.5.0",
