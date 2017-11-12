@@ -14,19 +14,8 @@ module.exports = function(params) {
 	var Ui = require(__dirname + '/../Alice/Ui.js');    
 	var Room = require(__dirname + '/../Alice/Room.js');    
 
-	var loadRoom = function(params){
-
-		params["being"] = new BeingsChanel().load()[0];
-		params["room"] = new Room(
-			params["being"], 
-			"Default", 
-			"sara", 
-			'v000.png');
-		
-		console.log("SmartAlice TheLoadRoom");
-		console.log(params);
-
-		return new Ui(params);
+	var loadRoom = function(room, being){
+		return new Ui(room, being);
 	}
 
     return {

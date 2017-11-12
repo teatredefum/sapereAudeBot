@@ -1,4 +1,5 @@
 'use strict';
+var Message = require(__dirname + '/Message.js');	
 
 function MessagesChanel(data){
 
@@ -14,6 +15,19 @@ function MessagesChanel(data){
 
 }
 
+MessagesChanel.prototype.OnNewMessage = function(message){
+
+	var TheMessage = new Message(
+		message["mRoom"],
+		message["mAuthor"],
+		message["mText"],
+		message["mTime"],
+		message["mAuthor"].mAvatar,
+		message["mIsAiml"]
+	);
+	return TheMessage;
+}
+
 MessagesChanel.prototype.getList = function(){
 	
 		return this.messages;
@@ -22,8 +36,9 @@ MessagesChanel.prototype.getList = function(){
 
 MessagesChanel.prototype.load = function(){
 	
-	var Message = require(__dirname + '/Message.js');	
+	
 		
+	/*
 	var message = new Message("Gallardo", "Lucy, canta una canción", new Date(), "gallardo.png");	
 	this.messages.push(message);
 
@@ -32,7 +47,8 @@ MessagesChanel.prototype.load = function(){
 	
 	message = new Message("Gallardo", "Nothing else matters", new Date(), "gallardo.png");	
 	this.messages.push(message);
-
+	*/
+	
 	return this.messages;
 
 }

@@ -3,6 +3,11 @@ var debug = require('debug');
 
 module.exports = function(app) {
   
+
+  var SmartAlice = require(__dirname + '/js/Box/SmartAlice.js');
+  var Room = require(__dirname + '/js/Alice/Room.js');
+  var sAlice = new SmartAlice();
+  
    // GET LUCY 
    var chat = function(req, res) {
     
@@ -40,14 +45,13 @@ module.exports = function(app) {
       
       debug("Init SmartAlice");
 
-      var SmartAlice = require(__dirname + '/js/Box/SmartAlice.js');
-      var sAlice = new SmartAlice();
       res.render('lucy', { 
                             chat: sAlice.messagesChanel.load(),
                             history: sAlice.MediasChanel.load(),
                             people: sAlice.BeingsChanel.load(),
-                            roomUi: sAlice,
                             translations: sAlice.Captions,
+                            being: JSON.stringify(sAlice.BeingsChanel.load()[0]),
+                            room: JSON.stringify(new Room(sAlice.BeingsChanel.load()[0], "Lucy", "file", "room.png")),
                             title: 'messages', 
                             welcome: 'INICIO',
                             reader: 'teatredefum.net',
@@ -68,5 +72,57 @@ module.exports = function(app) {
   //app.get('/:id', index);
   app.get('/cache/uniprot/ec1.json', cache);
   app.get('/tutorial', tutorial);
+
+
+  /**
+   * CHAT SECTION
+   */
+  var callbacks = [];
+  
+  function broadcastMessage(mAsk, mAnswer, delay){
+    var resp = {messages: [{question: mAsk, answer: mAnswer}]};
+
+    console.log("Broadcast stack");
+    while (callbacks.length > 0) {
+
+      callbacks.shift()(resp);
+      console.log("Firing a suscription with message...");
+
+    }
+
+  }
+  
+  app.post('/send', function(req, res){
+    // console.log("Doing chat SEND method");
+
+    var TheMessage = sAlice
+              .messagesChanel
+              .OnNewMessage(req.body);
+    
+    //broadcastMessage(TheMessage, false);          
+    
+    if (TheMessage.isForAiml()) {
+      console.log("For Aiml message...");
+
+      sAlice
+        .Ui(TheMessage.mRoom, TheMessage.mAuthor)
+        .send(TheMessage, function(TheResponse){
+          console.log("Lucy replies");
+          console.log(TheResponse.mText);
+          broadcastMessage(TheMessage, TheResponse, true);
+        });
+    }     
+    // res.json({status: 'ok'});
+  });
+  
+  app.get('/recv', function(req, res){
+     console.log("Doing chat get method");
+    callbacks.push(function(message){
+      console.log("Doing chat get method CALLABACK");
+      //console.log(message);
+      res.json(message);
+    });
+  });
+   
   
 }

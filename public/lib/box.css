@@ -11,6 +11,9 @@
     padding: 0;
 }
 
+#text-muted{
+    font-size: "50%";
+}
 
 .chat li
 {

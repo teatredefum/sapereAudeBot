@@ -1,11 +1,13 @@
-<% engine.Ui({}) %>
+<input type="hidden" value="<%= room %>" id="TheRoom">
+<input type="hidden" value="<%= being %>" id="TheBeing">
+
 <div class="container">
     <div class="row">
         <div class="col-md-5">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <span class="glyphicon glyphicon-comment"></span>
-                    <%= captions.talk.lucyContext %>
+                    <%= captions.talk.lucyContext %> <%= JSON.parse(being).mAuthor %>
                         <div class="btn-group pull-right">
                             <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
                                 <span class="glyphicon glyphicon-chevron-down"></span>
@@ -41,19 +43,22 @@
                         </div>
                 </div>
                 <div class="panel-body">
-                    <ul class="chat">
+                    <ul class="chat" id="MessageStreamList">
+
                         <%for (var message in messages){%>
 
                             <% message= chat[message]%>
-                                <%= include Message.ejs %>
-                            <%}%>
+                            <%= include Message.ejs %>
+
+                        <%}%>
+                        
                     </ul>
                 </div>
                 <div class="panel-footer">
                     <div class="input-group">
-                        <input id="btn-input" class="form-control input-sm" placeholder="<%= captions.talk.sendPlaceholder %>" type="text">
+                        <input id="MessageText" class="form-control input-sm" placeholder="<%= captions.talk.sendPlaceholder %>" type="text">
                         <span class="input-group-btn">
-                            <button class="btn btn-default btn-sm" id="btn-chat">
+                            <button class="btn btn-default btn-sm" id="MessageSendButton">
                                 <%= captions.talk.sendButton %>
                             </button>
                         </span>
@@ -118,3 +123,4 @@
         </div>
     </div>
 </div>
+
