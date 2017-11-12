@@ -1,0 +1,2438 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Proceedings of Extreme Markup Languages®</title>
+      <link rel="stylesheet" href="Proceedings%20of%20Extreme%20Markup%20Languages%C2%AE_files/extreme-proceedings.html" type="text/css">
+   </head>
+   <body>
+      <div id="head">
+         <div class="inner"><img class="right" src="Proceedings%20of%20Extreme%20Markup%20Languages%C2%AE_files/ExtremeNoDates.jpg"><h2><i>Proceedings of Extreme Markup Languages<sup>®</sup></i></h2>
+         </div>
+      </div>
+      <div id="nav">
+         <table cellspacing="5" width="100%">
+            <tbody><tr height="29">
+               <td class="button" align="center" width="20%"><a title="Master Bibliography" href="http://conferences.idealliance.org/extreme/biblio.html">Master Bibliography</a></td>
+               <td class="button" align="center" width="20%"><a title="Author Index" href="http://conferences.idealliance.org/extreme/authors.html">Author Index</a></td>
+               <td class="button" align="center" width="20%"><a title="Topic Index" href="http://conferences.idealliance.org/extreme/topics.html">Topic Index</a></td>
+               <td class="button" align="center" width="20%"><a title="Date Index" href="http://conferences.idealliance.org/extreme/dates.html">Date Index</a></td>
+               <td class="button" align="center" width="20%"><a title="Proceedings Home" href="http://conferences.idealliance.org/extreme/index.html">Proceedings Home</a></td>
+            </tr>
+         </tbody></table>
+      </div>
+      <div id="left1">
+         <div class="inner">
+            <h4>Enhancing AIML Bots using Semantic Web Technologies</h4>
+            <address>Eric Freese <br class="br"><a href="mailto:eric%20%28dot%29%20freese%20%28at%29%20lexisnexis%20%28dot%29%20com" class="mailto">eric (dot) freese (at) lexisnexis (dot) com</a></address>
+            <div class="abstract">
+               <h4>Abstract</h4>
+               <p class="first">
+                  				AIML [Artificial Intelligence Markup Language] is a
+ derivative of
+                  				XML [Extensible Markup Language] that enables 
+pattern-based, stimulus-response knowledge content to be served, 
+received and processed on the Web and offline
+                  in the manner that is presently possible with HTML 
+[Hypertext Markup Language] and XML.  AIML was designed for ease of 
+implementation, ease of use by newcomers, and for interoperability with 
+XML and XML
+                  derivatives such as XHTML. Software reads the AIML 
+objects and provides application-level functionality based on their 
+structure.
+                  The AIML interpreter is part of a larger application 
+generically known as a bot, which carries the larger functional set of
+                  interaction based on AIML.  A software module called a
+ responder handles the human-to-bot or bot-to-bot interface work between
+                  an AIML interpreter and its object(s).
+                  			
+               </p>
+               <p>
+                  				RDF [Resource Description Framework] is a language
+ for representing information, specifically metadata, about resources in
+ the World Wide Web.  The underlying
+                  structure of any RDF expression is a collection of 
+triples. Each triple represents a statement of a relationship between 
+the
+                  things that it links. Each triple has three parts: a 
+subject, an object, and a predicate (also called a property) that 
+denotes
+                  the relationship. In many cases the triples can be 
+used to form simple human understandable sentences.
+                  			
+               </p>
+               <p>This paper discusses a methodology and provides 
+examples of the conversion of RDF triples to AIML topics and categories 
+which
+                  can then be used within an AIML-based bot. The 
+statements representing the domain knowledge can then be used in a 
+conversation
+                  handled by the responder. The combination of these two
+ technologies allows the knowledge represented within the RDF to be
+                  accessed interactively using natural language by a 
+human user.
+               </p>
+            </div>
+            <p class="keywords"><b style="font-size:85%">Keywords:</b> <a href="http://conferences.idealliance.org/extreme/topics/RDF.html">RDF</a>; <a href="http://conferences.idealliance.org/extreme/topics/SemanticWeb.html">Semantic Web</a></p>
+            <div class="contents">
+               <h4>Table of Contents</h4>
+               <dl>
+                  <dt><a href="#t1">Introduction</a></dt>
+                  <dt><a href="#t2">ALICE - A Quick Introduction</a></dt>
+                  <dt><a href="#t3">AIML - A Primer</a></dt>
+                  <dl>
+                     <dt><a href="#t3-1">Categories</a></dt>
+                     <dt><a href="#t3-2">Recursion</a></dt>
+                     <dl>
+                        <dt><a href="#t3-2-1">Symbolic Reduction</a></dt>
+                        <dt><a href="#t3-2-2">Divide and Conquer</a></dt>
+                        <dt><a href="#t3-2-3">Synonyms</a></dt>
+                        <dt><a href="#t3-2-4">Spelling and Grammar Correction</a></dt>
+                        <dt><a href="#t3-2-5">Keywords</a></dt>
+                        <dt><a href="#t3-2-6">Conditionals</a></dt>
+                     </dl>
+                     <dt><a href="#t3-3">Targeting</a></dt>
+                     <dt><a href="#t3-4">Context</a></dt>
+                  </dl>
+                  <dt><a href="#t4">RDF - A Quick Primer</a></dt>
+                  <dt><a href="#t5">Introducing AIMEE</a></dt>
+                  <dt><a href="#t6">Creating AIML categories from RDF Triples</a></dt>
+                  <dt><a href="#t7">AIMEE and the Dublin Core</a></dt>
+                  <dl>
+                     <dt><a href="#t7-1">dc:Creator</a></dt>
+                     <dt><a href="#t7-2">dc:Subject</a></dt>
+                     <dt><a href="#t7-3">dc:Description</a></dt>
+                     <dt><a href="#t7-4">dc:Publisher</a></dt>
+                  </dl>
+                  <dt><a href="#t8">Introducing AIMEE to Your Friends using FOAF</a></dt>
+                  <dl>
+                     <dt><a href="#t8-1">foaf:mbox</a></dt>
+                     <dt><a href="#t8-2">foaf:homepage, foaf:workplaceHomepage</a></dt>
+                     <dt><a href="#t8-3">foaf:knows</a></dt>
+                     <dt><a href="#t8-4">foaf:interest</a></dt>
+                  </dl>
+                  <dt><a href="#t9">Scalability</a></dt>
+                  <dt><a href="#t10">The Linking Open Data Project</a></dt>
+                  <dt><a href="#t11">Conclusion</a></dt>
+               </dl>
+            </div>
+            <div class="authorBio">
+               <h4>Eric Freese</h4>
+               <p class="first">Eric Freese is a consulting software 
+engineer with LexisNexis. He has nearly 20 years of experience in the 
+areas of document,
+                  information, and knowledge management with specific 
+expertise in the development and implementation of XML technologies. His
+                  experience includes research, analysis, specification,
+ design, development, testing, implementation, integration and 
+management
+                  of information systems in a wide range of 
+environments. He has significant research experience in human interface 
+design,
+                  graphics interface development and artificial 
+intelligence. Freese was a founding member of TopicMaps.Org, the 
+organization
+                  that developed the XTM [XML Topic Maps] specification,
+ and served as the chairman of this group. He continues to strive to 
+build the Star Trek computer so his mother
+                  will finally understand what he does for a living.
+               </p>
+            </div>
+         </div>
+      </div>
+      <div id="paperLinks">
+         <table cellspacing="5" width="100%">
+            <tbody><tr height="18">
+               <td class="button" align="center" width="25%"><a title="XML Source" href="http://conferences.idealliance.org/extreme/xml/2007/Freese01/EML2007Freese01.xml">XML&nbsp;Source</a></td>
+               <td class="button" align="center" width="25%"><a title="PDF Version" href="http://conferences.idealliance.org/extreme/xslfo-pdf/2007/Freese01/EML2007Freese01.pdf">PDF&nbsp;(for&nbsp;print)</a></td>
+               <td class="nobutton" align="center" width="25%"><span class="nolink">Author&nbsp;Package</span></td>
+               <td class="nobutton" align="center" width="25%"><span class="nolink">Typeset&nbsp;PDF</span></td>
+            </tr>
+         </tbody></table>
+      </div>
+      <div id="right1">
+         <div class="inner">
+            <div class="front">
+               <h1 class="title">Enhancing AIML Bots using Semantic Web Technologies</h1>
+               <address>Eric Freese [LexisNexis]</address>
+               <h3 class="conference">Extreme Markup Languages 2007® (Montréal, Québec)</h3>
+               <h4><i>Copyright © 2007 Eric Freese. Reproduced with permission.</i></h4>
+            </div>
+            <div class="section">
+               <h2><a name="t1">
+                     <!-- anchor --></a>Introduction
+               </h2>
+               <p>RDF has been described as the lingua franca for the 
+semantic web. Encoding data in RDF allows computers to do browsing, 
+searching,
+                  querying, etc. for human users. These computers will 
+be able to seek out knowledge distributed throughout the web, mesh it
+                  together and do something useful with it. RDF can be 
+encoded in several different syntaxes including XML, N3 and Turtle to
+                  name a few. While some of these are more human 
+readable than others, a reasonable person would not ask an 8-year-old to
+ read
+                  the data and be able to understand it.
+               </p>
+               <p>Imagine being able to interact with a computer that 
+contains the knowledge stored in RDF files using natural human language.
+                  A simple conversation could allow the computer to 
+provide a user with exactly the information that he is looking for 
+without
+                  having to search through a multitude of search hits. 
+Parents of young children are told to "Answer the question being asked".
+                  This guidance tells us to provide simple answers to 
+simple questions and not a full dissertation on a particular subject.
+                  Quite often, the simple answer is the desired result. 
+If more information is required, subsequent questions will follow, to
+                  be sure (and hopefully not all of them are "Why?").
+               </p>
+               <p>The current technology on the web feels more like 
+trying to take a sip from fire hose, than from a cup. Most searches on 
+popular
+                  search engines will yield thousands of hits unless you
+ feel lucky. In fact, the trend seems to favor a large number of hits
+                  rather than a limited number of high-quality matches. 
+ The goal of the project described in this paper is to allow users to
+                  access large amounts of knowledge by interacting with a
+ system using natural language. Information is delivered in small 
+chunks.
+                  The user can receive additional information by 
+requesting more detail or by asking further questions.
+               </p>
+            </div>
+            <div class="section">
+               <h2><a name="t2">
+                     <!-- anchor --></a>ALICE - A Quick Introduction
+               </h2>
+               <p>
+                  				ALICE [Artificial Linguistic Internet Computer 
+Entity]was developed in the late 1990s by Dr. Richard Wallace. The goal 
+of the project was to bridge the divide between human and
+                  computer interaction. The architecture is minimalist. 
+The core program itself is rather compact, but allows for the data to
+                  be as large or as small as necessary for a given task.
+               </p>
+               <p>When you chat with ALICE you will find that she likes 
+to think of herself as a sentient entity, claims to know a lot of gossip
+                  and expresses a fondness for Dr. Wallace. For his work
+ on ALICE, Wallace was awarded the Loebner prize in 2000, 2001, and
+                  2004. Based on the Turing Test, the prize is awarded 
+to the most "human" computer program. The Turing Test is a proposal for
+                  a test of a machine's capability to demonstrate 
+thought. Described by Professor Alan Turing in the 1950 paper "Computing
+ machinery
+                  and intelligence," it proceeds as follows: a human 
+judge engages in a natural language conversation with two other parties,
+                  one a human and the other a machine; if the judge 
+cannot reliably tell which is which, then the machine is said to pass 
+the
+                  test. It is assumed that both the human and the 
+machine try to appear human. The winner of the annual contest is the 
+best
+                  entry relative to other entries that year, 
+irrespective of how good it is in an absolute sense. However, even the 
+casual user
+                  will often expose a computer's mechanistic aspects in 
+short conversations.<b><span style="font-size:85%"><a href="#TT" name="fromTT">[TT]</a></span></b></p>
+               <p>Those familiar with early attempts at communication 
+with machine intelligence may remember a system called ELIZA.  ELIZA was
+                  a kind of computerized psychiatrist written in the 
+1960s by Professor Joseph Weizenbaum at the Massachusetts Institute of
+                  Technology.  ELIZA was an exercise in human response 
+and natural language communication with so-called machine intelligence.
+                   There are still versions of ELIZA in existence today.
+ Is ALICE just ELIZA with angle brackets? Conceptually ALICE is not
+                  much more complicated that ELIZA. The main difference 
+is the ability to define customizable AIML files that can be added to
+                  ALICE making her more extensible and customizable than
+ ELIZA was. Does this minimize the potential use of ALICE in real-world
+                  applications? I think not and hope to demonstrate that
+ in this paper.
+               </p>
+            </div>
+            <div class="section">
+               <h2><a name="t3">
+                     <!-- anchor --></a>AIML - A Primer
+               </h2>
+               <p>AIML describes a class of data objects called AIML objects and partially describes the behavior of computer programs that
+                  process them. AIML is a derivative of XML.
+               </p>
+               <p>AIML objects are made up of units called topics and 
+categories, which contain either parsed or unparsed data. Parsed data
+                  is made up of characters, some of which form character
+ data, and some of which form AIML elements. AIML elements encapsulate
+                  the stimulus-response knowledge contained in the 
+document. Character data within these elements is sometimes parsed by an
+                  AIML interpreter, and sometimes left unparsed for 
+later processing by a responder.
+               </p>
+               <div class="subsec1">
+                  <h3><a name="t3-1">
+                        <!-- anchor --></a>Categories
+                  </h3>
+                  <p>The basic unit of knowledge in AIML is called a 
+category. Each category consists of an input question, an output answer,
+ and
+                     an optional context. The question, or stimulus, is 
+called the pattern.  The answer, or response, is called the template. 
+There
+                     are two optional methods for defining context using
+ the <tt class="code">&lt;that&gt;</tt> and <tt class="code">&lt;topic&gt;</tt> markup. The <tt class="code">&lt;that&gt;</tt>
+ tag appears inside a category, and its pattern must match the robot's 
+last utterance. Remembering one last utterance is important
+                     if the robot asks a question. The <tt class="code">&lt;topic&gt;</tt> tag appears outside the category, and collects a group of categories together. The topic may be set inside any template.
+                     The use of these will be shown in more detail below.
+                  </p>
+                  <p>The pattern language within AIML is simple, 
+consisting only of words, spaces, and the wildcard symbols "_" and "*". 
+The words
+                     may consist of letters and numerals, but no other 
+characters. The pattern language is case insensitive. Words within the 
+pattern
+                     are separated by a single space, and the wildcard 
+characters function like words.
+                  </p>
+                  <p>The template language is also designed to represent
+ the response as simply as possible for the task at hand. In its 
+simplest
+                     form, the template consists of only plain, unmarked
+ text. More generally, AIML tags allow the reply to save data, activate
+                     other programs, give conditional responses, and 
+recursively call the pattern matcher to insert the responses from other 
+categories.
+                     Most AIML tags belong to this template side 
+sublanguage.
+                  </p>
+                  <p>AIML supports two ways to interface other languages and systems. The <tt class="code">&lt;system&gt;</tt> tag executes any program accessible as an operating system shell command, and inserts the results in the reply. The <tt class="code">&lt;javascript&gt;</tt> tag allows arbitrary scripting inside the templates.
+                  </p>
+                  <p>AIML processing is similar to querying a simple 
+database of questions and answers. However, the pattern matching "query"
+ language
+                     is much simpler than something like SQL. A category
+ template may contain the recursive <tt class="code">&lt;srai&gt;</tt> tag, so that the output depends not only on one matched category, but also any others recursively reached through <tt class="code">&lt;srai&gt;</tt>.
+                  </p>
+               </div>
+               <div class="subsec1">
+                  <h3><a name="t3-2">
+                        <!-- anchor --></a>Recursion
+                  </h3>
+                  <p>AIML implements recursion with the <tt class="code">&lt;srai&gt;</tt>
+ operator. No agreement exists about the meaning of the acronym. The 
+"AI" stands for artificial intelligence, but "SR" may
+                     mean "stimulus-response," "syntactic rewrite," 
+"symbolic reduction," "simple recursion," or "synonym resolution." The 
+disagreement
+                     over the acronym reflects the variety of 
+applications for <tt class="code">&lt;srai&gt;</tt> in AIML. Each of these is described in more detail in a subsection below:
+                     					
+                     </p><ol type="1">
+                        <li>Symbolic Reduction: Reduce complex grammatic forms to simpler ones.</li>
+                        <li>Divide and Conquer: Split an input into two or more subparts, and combine the responses to each.</li>
+                        <li>Synonyms: Map different ways of saying the same thing to the same reply.</li>
+                        <li>Spelling or grammar corrections.</li>
+                        <li>Detecting keywords anywhere in the input.</li>
+                        <li>Conditionals: Certain forms of branching may be implemented with &lt;srai&gt;.</li>
+                        <li>Any combination of (1)-(6).</li>
+                     </ol>
+                     				
+                  <p></p>
+                  <p>The danger of <tt class="code">&lt;srai&gt;</tt> is that it could permit the creation infinite loops. Although there are some risks, the <tt class="code">&lt;srai&gt;</tt> tag is much simpler than any of the iterative block structured control tags which might have replaced it.
+                  </p>
+                  <div class="subsec2">
+                     <h4><a name="t3-2-1">
+                           <!-- anchor --></a>Symbolic Reduction
+                     </h4>
+                     <p>Symbolic reduction refers to the process of 
+simplifying complex grammatical forms into simpler ones. Usually, the 
+atomic patterns
+                        in categories storing bot knowledge are stated 
+in the simplest possible terms, for example we tend to prefer patterns 
+like
+                        "WHO IS SOCRATES" to ones like "DO YOU KNOW WHO 
+SOCRATES IS" when storing biographical information about Socrates.
+                     </p>
+                     <p>Many of the more complex forms reduce to simpler forms using AIML categories designed for symbolic reduction:
+                        						
+                        
+                        </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;DO YOU KNOW WHO * IS&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;WHO IS &lt;star/&gt;&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>
+                        					
+                     <p></p>
+                     <p>Whatever input matched this pattern, the portion bound to the wildcard "*" may be inserted into the reply with the markup
+                        <tt class="code">&lt;star/&gt;</tt>. This category reduces any input of the form "Do you know who X is?" to "Who is X?"
+                     </p>
+                  </div>
+                  <div class="subsec2">
+                     <h4><a name="t3-2-2">
+                           <!-- anchor --></a>Divide and Conquer
+                     </h4>
+                     <p>Many individual sentences may be reduced to two 
+or more subsentences, and the reply formed by combining the replies to 
+each.
+                        A sentence beginning with the word "Yes" for 
+example, if it has more than one word, may be treated as the subsentence
+ "Yes."
+                        plus whatever follows it.
+                        						
+                        
+                        </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;YES *&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;YES&lt;/srai&gt; &lt;sr/&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>
+                        					
+                     <p></p>
+                     <p>The markup <tt class="code">&lt;sr/&gt;</tt> is simply an abbreviation for <tt class="code">&lt;srai&gt;&lt;star/&gt;&lt;/srai&gt;</tt>.
+ The net effect is that the response will be the combination of 2 
+separate responses based on how the stimulus is divided.
+                        This may have unexpected results, or in many 
+cases produce correct results that the botmaster might never have taken 
+into
+                        account.  For example:
+                        						
+                        
+                        </p><div class="codeblock"><pre>Client: I bet you are gay.
+ALICE: Actually I am not the gambling type.  Actually as a machine
+  I have no need for sex.</pre></div>
+                        					
+                     <p></p>
+                     <p>In this case ALICE linked two different 
+categories which both coincidentally have a moral theme. But this 
+specific combination
+                        was not "preprogrammed" in the AIML files. Is 
+this artificial intelligence or coincidence? It is possible to argue 
+both sides
+                        but as much, if not more, knowledge is gained by
+ unexpected results as it is from an original hypothesis.
+                     </p>
+                  </div>
+                  <div class="subsec2">
+                     <h4><a name="t3-2-3">
+                           <!-- anchor --></a>Synonyms
+                     </h4>
+                     <p>The AIML standard does not permit more than one pattern per category. Synonyms are perhaps the most common application of
+                        <tt class="code">&lt;srai&gt;</tt>. Many ways to say the same thing can be reduced to a single base category, which contains the reply:
+                        						
+                        
+                        </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;HELLO&lt;/pattern&gt;
+  &lt;template&gt;Hi there!&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;HI&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;HELLO&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;HI THERE&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;HELLO&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;HOWDY&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;HELLO&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;HOLA&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;HELLO&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>
+                        					
+                     <p></p>
+                  </div>
+                  <div class="subsec2">
+                     <h4><a name="t3-2-4">
+                           <!-- anchor --></a>Spelling and Grammar Correction
+                     </h4>
+                     <p>The single most common client spelling mistake 
+is the use of "your" when "you're" or "you are" is intended. Not every 
+occurrence
+                        of "your," however, should be turned into 
+"you're." A small amount of grammatical context is usually necessary to 
+catch this
+                        error:
+                        						
+                        
+                        </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;YOUR A *&lt;/pattern&gt;
+  &lt;template&gt;I think you mean "you're" or "you are" not "your."
+    &lt;srai&gt;YOU ARE A &lt;star/&gt;&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>
+                        					
+                     <p></p>
+                     <p>Here the bot both corrects the client input and acts as a language tutor.</p>
+                  </div>
+                  <div class="subsec2">
+                     <h4><a name="t3-2-5">
+                           <!-- anchor --></a>Keywords
+                     </h4>
+                     <p>Frequently it is useful to write an AIML template which is activated by the appearance of a keyword anywhere in the input
+                        sentence. The general format of four AIML categories is illustrated by this example borrowed from ELIZA:
+                        						
+                        
+                        </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;MOTHER&lt;/pattern&gt;
+  &lt;template&gt; Tell me more about your family. &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ MOTHER&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;MOTHER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;MOTHER _&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;MOTHER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ MOTHER *&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;MOTHER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>
+                        					
+                     <p></p>
+                     <p>The first category both detects the keyword when
+ it appears by itself, and provides the generic response. The second 
+category
+                        detects the keyword as the suffix of a sentence.
+ The third detects it as the prefix of an input sentence, and finally 
+the
+                        last category detects the keyword anywhere 
+within the sentence. Each of the last three categories uses &lt;srai&gt;
+ to link to the
+                        first, so that all four cases produce the same 
+reply, but it needs to be written and stored only once.
+                     </p>
+                  </div>
+                  <div class="subsec2">
+                     <h4><a name="t3-2-6">
+                           <!-- anchor --></a>Conditionals
+                     </h4>
+                     <p>It is possible to write conditional branches in AIML, using only the <tt class="code">&lt;srai&gt;</tt> tag. Consider three categories:
+                        						
+                        
+                        </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;WHO IS HE&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;WHOISHE &lt;get name="he"/&gt;&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;WHOISHE *&lt;/pattern&gt;
+  &lt;template&gt;He is &lt;get name="he"/&gt;.&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;WHOISHE UNKNOWN&lt;/pattern&gt;
+  &lt;template&gt;I don't know who he is.&lt;/template&gt;
+&lt;/category&gt;</pre></div>
+                        					
+                     <p></p>
+                     <p>Provided that the predicate "he" is initialized 
+to "Unknown," the categories execute a conditional branch depending on 
+whether
+                        "he" has been set. As a convenience to the 
+botmaster, AIML also provides the equivalent function through the <tt class="code">&lt;condition&gt;</tt> tag.
+                     </p>
+                  </div>
+               </div>
+               <div class="subsec1">
+                  <h3><a name="t3-3">
+                        <!-- anchor --></a>Targeting
+                  </h3>
+                  <p>Bot personalities are created and shaped through a 
+cyclical process of supervised learning called targeting. Targeting is
+                     a cycle incorporating user, bot, and botmaster. 
+Whenever the user inputs something that finds no complete match among 
+the
+                     categories, the statement is logged by the bot and 
+delivered as a target to the botmaster. The botmaster then creates 
+suitable
+                     responses, starting with the most common queries. 
+This cycle produces a progressively more refined bot personality.
+                  </p>
+                  <p>The art of AIML writing is most apparent in creating default categories, which provide noncommittal replies to a wide range
+                     of inputs. This example allows the user to train the bot on the fly:
+                     					
+                     
+                     </p><div class="codeblock"><pre>User: Where do I find the web page with Australopithecus?
+ALICE: Where do you want to find it?
+User: Bad Answer Alice, time to Learn a new Line
+ALICE: How would you answer "Where do I find the web page with
+  Australopithecus?"
+User: I would say: "http://www.ancientskulls.net/australopithecus.html"
+ALICE: Thanks, human. Try asking me again.
+User: Where do I find the web page with Australopithecus?
+ALICE: http://www.ancientskulls.net/australopithecus.html</pre></div>
+                     				
+                  <p></p>
+                  <p>This is exactly the same as targeting when the 
+botmaster is the teacher. More accurately, it is an AIML interface to 
+targeting.
+                     This scenario raises many problems, such as how to 
+weed out hackers and other garbage givers, which might mean only turning
+                     on the Learn function while in a restricted 
+sandbox, though it is the free labor of many chatters on the web that 
+could help
+                     the bot grow wise more quickly.
+                  </p>
+                  <p>That is the crux of the learning problem in a 
+nutshell. It all comes down to editing. Either the botmaster edits good 
+quality
+                     replies to begin with, or if the bot is "open to 
+the public" then the teacher has to edit out all the unsatisfactory 
+answers
+                     supplied by all that "free" labor. Based on the 
+experience of many AIML bot developers, compared with a hypothetical 
+learning
+                     machine capable of learning language like a child, 
+the AIML targeting approach appears to be more efficient.
+                  </p>
+               </div>
+               <div class="subsec1">
+                  <h3><a name="t3-4">
+                        <!-- anchor --></a>Context
+                  </h3>
+                  <p>The element <tt class="code">&lt;that&gt;</tt> in AIML refers to the robot's previous utterance. Specifically, if the robot responds with a multiple sentence paragraph,
+                     the value of <tt class="code">&lt;that&gt;</tt> is set to the last sentence in the sequence. The choice of the keyword "that" is motivated by its use in ordinary language:
+                     					
+                     
+                     </p><div class="codeblock"><pre>User: Today is yesterday.
+ALICE: That makes no sense.
+User: The answer is 3.1412926 approximately.
+ALICE: That is cool.</pre></div>
+                     				
+                  <p></p>
+                  <p>In AIML the syntax <tt class="code">&lt;that&gt;...&lt;/that&gt;</tt> encloses a pattern that matches the robot's previous utterance. A common application of <tt class="code">&lt;that&gt;</tt> is found in yes-no questions:
+                     					
+                     
+                     </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;YES&lt;/pattern&gt;
+  &lt;that&gt;DO YOU LIKE MOVIES&lt;/that&gt;
+  &lt;template&gt;What is your favorite movie?&lt;/template&gt;
+&lt;/category&gt;</pre></div>
+                     				
+                  <p></p>
+                  <p>This category is activated when the client says 
+YES. The robot must be able to find out what the client is saying "yes" 
+to.
+                     If the robot asked, "Do you like movies?," this 
+category matches, and the response, "What is your favorite movie?," 
+allows
+                     the conversation to continue along the same lines.
+                  </p>
+                  <p>One interesting application of <tt class="code">&lt;that&gt;</tt> are categories that enable the robot to respond to knock-knock jokes. The categories:
+                     					
+                     
+                     </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;KNOCK KNOCK&lt;/pattern&gt;
+  &lt;template&gt;Who's there?&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;*&lt;/pattern&gt;
+  &lt;that&gt;WHOS THERE&lt;/that&gt;
+  &lt;template&gt;&lt;person/&gt; who?&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;*&lt;/pattern&gt;
+  &lt;that&gt;* WHO&lt;/that&gt;
+  &lt;template&gt;Ha ha very funny, &lt;get name="name"/&gt;.&lt;/template&gt;
+&lt;/category&gt;</pre></div>produce the following dialog:
+                     					
+                     
+                     <div class="codeblock"><pre>User: Knock knock.
+ALICE: Who's there?
+User: Banana.
+ALICE: Banana who?
+User: Knock knock.
+ALICE: Who's there?
+User: Banana.
+ALICE: Banana who?
+User: Knock knock.
+ALICE: Who's there?
+User: Orange.
+ALICE: Orange who?
+User: Orange you glad I didn't say banana.
+ALICE: Ha ha very funny, Nancy.</pre></div>
+                     				
+                  <p></p>
+                  <p>Internally the AIML interpreter stores the input pattern, that pattern and topic pattern along a single path, like: INPUT
+                     <tt class="code">&lt;that&gt;</tt> THAT <tt class="code">&lt;topic&gt;</tt> TOPIC.  When the values of <tt class="code">&lt;that&gt;</tt> or <tt class="code">&lt;topic&gt;</tt> are not specified, the program implicitly sets the values of the corresponding THAT or TOPIC pattern to the wildcard "*".
+                  </p>
+                  <p>The first part of the path to match is the input. 
+If more than one category have the same input pattern, the program may 
+distinguish
+                     between them depending on the value of <tt class="code">&lt;that&gt;</tt>. If two or more categories have the same <tt class="code">&lt;pattern&gt;</tt> and <tt class="code">&lt;that&gt;</tt>, the final step is to choose the reply based on the <tt class="code">&lt;topic&gt;</tt>.
+                  </p>
+                  <p>This structure seems to suggest a design rule: never use <tt class="code">&lt;that&gt;</tt> unless you have written two categories with the same <tt class="code">&lt;pattern&gt;</tt>, and never use <tt class="code">&lt;topic&gt;</tt> unless you write two categories with the same <tt class="code">&lt;pattern&gt;</tt> and <tt class="code">&lt;that&gt;</tt>. That being said, one of the most useful applications for <tt class="code">&lt;topic&gt;</tt> is to create subject-dependent conversation starters like:
+                     					
+                     
+                     </p><div class="codeblock"><pre>&lt;topic name="CARS"&gt;
+  &lt;category&gt;
+    &lt;pattern&gt;*&lt;/pattern&gt;
+    &lt;template&gt;
+      &lt;random&gt;
+        &lt;li&gt;What's your favorite car?&lt;/li&gt;
+        &lt;li&gt;What kind of car do you drive?&lt;/li&gt;
+        &lt;li&gt;Do you get a lot of parking tickets?&lt;/li&gt;
+        &lt;li&gt;My favorite car is one with a driver.&lt;/li&gt;
+      &lt;/random&gt;
+    &lt;/template&gt;
+  &lt;/category&gt;
+&lt;/topic&gt;</pre></div>
+                     				
+                  <p></p>
+                  <p>The <tt class="code">&lt;set&gt;</tt> element allows the program to add further context as the discussion progresses. The <tt class="code">&lt;get&gt;</tt> element allows the program to "remember" what has been said in the past. Consider the following example:
+                     					
+                     
+                     </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;DO YOU LIKE ICE CREAM&lt;/pattern&gt;
+  &lt;template&gt;What is not to like about
+    &lt;set name="it"&gt;&lt;set name="topic"&gt;ice cream&lt;/set&gt;&lt;/set&gt;?
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;topic name="ice cream"&gt;
+  &lt;category&gt;
+    &lt;pattern&gt;WHAT IS YOUR FAVORITE FLAVOR&lt;/pattern&gt;
+    &lt;template&gt;My favorite flavor of &lt;get name="topic"/&gt; is chocolate
+      peanut butter.&lt;/template&gt;
+  &lt;/category&gt;
+&lt;/topic&gt;</pre></div>In this case the user has asked the program about ice cream. The first <tt class="code">&lt;set&gt;</tt> element is used to tell the computer that the word "it" now refers to "ice cream". The second <tt class="code">&lt;set&gt;</tt> element sets the current topic to "ice cream." This allows the program to filter any responses using the <tt class="code">&lt;topic&gt;</tt> markup discussed previously. In the second template, the <tt class="code">&lt;get&gt;</tt> element allows the topic ("ice cream") to be inserted into the response. The <tt class="code">&lt;think&gt;</tt> element can also be used to set the context. The difference between that and the method described above is that the contents
+                     of the <tt class="code">&lt;think&gt;</tt>element are processed by the program but not displayed to the user.
+                  <p></p>
+                  <p>Considering the vast size of the set of things people could say that are grammatically correct or semantically meaningful,
+                     the number of things people actually do say is surprisingly small. Steven Pinker, in his book <i>How the Mind Works</i>
+ wrote, "Say you have ten choices for the first word to begin a 
+sentence, ten choices for the second word (yielding 100 two-word
+                     beginnings), ten choices for the third word 
+(yielding a thousand three-word beginnings), and so on. (Ten is in fact 
+the approximate
+                     geometric mean of the number of word choices 
+available at each point in assembling a grammatical and sensible 
+sentence). A
+                     little arithmetic shows that the number of 
+sentences of 20 words or less (not an unusual length) is about 1020."
+                  </p>
+                  <p>Experience has shown that for chat robot 
+programmers, Pinker's calculations, while mathematically accurate, do 
+not necessarily
+                     model the real world. Experiments with ALICE 
+indicate that the number of choices for the "first word" is more than 
+ten, but
+                     it is only about two thousand. Specifically, about 
+2000 words covers 95% of all the first words input to ALICE. The number
+                     of choices for the second word is only about two. 
+To be sure, there are some first words ("I" and "You" for example) that
+                     have many possible second words, but the overall 
+average is just under two words. The average branching factor decreases 
+with
+                     each successive word.
+                  </p>
+                  <p>A plot of the core of the ALICE brain is shown 
+below and can be found online at 
+http://www.alicebot.org/documentation/gallery/.
+                     The spiral images outline a territory of language 
+that has been effectively "conquered" by ALICE, and AIML. These plots 
+also
+                     provide guidance for adding new information to the 
+knowledge base.
+                  </p>
+                  <div class="figure">
+                     <h5>Figure 1</h5><img src="Proceedings%20of%20Extreme%20Markup%20Languages%C2%AE_files/EML2007free050701.jpg" border="0" width="100%"><h5>[Link to <a href="http://conferences.idealliance.org/extreme/html/2007/Freese01/EML2007free050701.jpg" target="EML2007free050701.jpg">open this graphic in a separate page</a>]
+                     </h5>
+                  </div>
+                  <p>It is possible to concoct riddles and linguistic 
+paradoxes that show how difficult the natural language problem is. "John
+                     saw the mountains flying over Zurich" or "Fruit 
+flies like a banana" reveal the ambiguity of language and the limits of 
+an
+                     ALICE-style approach.  However, ALICE already knows
+ how to respond to these. It is believed that the basic outline of the
+                     spiral graphs will look much the same. The "big 
+trees" from "A *" to "YOUR *" may become bigger, but unless the English 
+language
+                     itself changes we won't find any more big trees. 
+The territory of language "understood" by ALICE contains a large 
+percentage
+                     of the population of sentences that people commonly
+ use. Expanding the borders even more we will continue to absorb the 
+stragglers
+                     outside, until the very last human critic cannot 
+think of one sensible sentence to "fool" ALICE.
+                  </p>
+               </div>
+            </div>
+            <div class="section">
+               <h2><a name="t4">
+                     <!-- anchor --></a>RDF - A Quick Primer
+               </h2>
+               <p>RDF is a language for representing information about 
+resources in the World Wide Web. It is particularly intended for 
+representing
+                  metadata about Web resources, such as the title, 
+author, and modification date of a Web page, copyright and licensing 
+information
+                  about a Web document, or the availability schedule for
+ some shared resource. However, by generalizing the concept of a "Web
+                  resource", RDF can also be used to represent 
+information about things that can be identified on the Web, even when 
+they cannot
+                  be directly retrieved on the Web. Examples include 
+information about items available from on-line shopping facilities 
+(e.g.,
+                  information about specifications, prices, and 
+availability), or the description of a Web user's preferences for 
+information
+                  delivery.
+               </p>
+               <p>RDF is intended for situations in which this 
+information needs to be processed by applications, rather than being 
+only displayed
+                  to people. RDF provides a common framework for 
+expressing this information so it can be exchanged between applications 
+without
+                  loss of meaning. Since it is a common framework, 
+application designers can leverage the availability of common RDF 
+parsers
+                  and processing tools. The ability to exchange 
+information between different applications means that the information 
+may be
+                  made available to applications other than those for 
+which it was originally created.
+               </p>
+               <p>RDF is based on the idea of identifying things using 
+Web identifiers (called URIs [Uniform Resource Identifiers]), and 
+describing resources in terms of simple properties and property values. 
+This enables RDF to represent simple statements
+                  about resources as a graph of nodes and arcs 
+representing the resources, and their properties and values.
+               </p>
+               <div class="figure">
+                  <h5>Figure 2</h5><img src="Proceedings%20of%20Extreme%20Markup%20Languages%C2%AE_files/EML2007free050702.png" border="0" width="100%"><h5>[Link to <a href="http://conferences.idealliance.org/extreme/html/2007/Freese01/EML2007free050702.png" target="EML2007free050702.png">open this graphic in a separate page</a>]
+                  </h5>
+               </div>
+               <p>The figure above illustrates that RDF uses URIs to identify:
+                  				
+                  </p><ul>
+                     <li>individuals, e.g., Eric Miller, identified by http://www.w3.org/People/EM/contact#me</li>
+                     <li>kinds of things, e.g., Person, identified by http://www.w3.org/2000/10/swap/pim/contact#Person</li>
+                     <li>properties of those things, e.g., mailbox, identified by http://www.w3.org/2000/10/swap/pim/contact#mailbox</li>
+                     <li>values of those properties, e.g. 
+mailto:em@w3.org as the value of the mailbox property (RDF also uses 
+character strings such
+                        as "Eric Miller", and values from other data 
+types such as integers and dates, as the values of properties)
+                     </li>
+                  </ul>
+                  			
+               <p></p>
+               <p>The graph above can be represented in natural language
+ by the following group of statements "there is a Person identified
+                  by http://www.w3.org/People/EM/contact#me, whose name 
+is Eric Miller, whose email address is em@w3.org, and whose title is
+                  Dr.". Using RDF/XML syntax the statements would be 
+marked up as follows:
+                  				
+                  
+                  </p><div class="codeblock"><pre>&lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:contact="http://www.w3.org/2000/10/swap/pim/contact#"&gt;
+  &lt;contact:Person rdf:about="http://www.w3.org/People/EM/contact#me"&gt;
+    &lt;contact:fullName&gt;Eric Miller&lt;/contact:fullName&gt;
+    &lt;contact:mailbox rdf:resource="mailto:em@w3.org"/&gt;
+    &lt;contact:personalTitle&gt;Dr.&lt;/contact:personalTitle&gt;
+  &lt;/contact:Person&gt;
+&lt;/rdf:RDF&gt;</pre></div>
+                  			
+               <p></p>
+               <p>RDF provides a general, flexible method to decompose any knowledge into small pieces, called triples, with some rules about
+                  the semantics (meaning) of those pieces.
+               </p>
+               <p>The foundation is breaking knowledge down into a 
+labeled, directed graph. Each edge in the graph represents a fact, or a 
+relation
+                  between two things. The connection in the example from
+ the node "http://www.w3.org/People/EM/contact#me" labeled 
+"http://www.w3.org/2000/10/swap/pim/contact#mailbox"
+                  to the node "mailto:em@w3.org" represents the fact 
+that Eric Miller has an email address of "mailto:em@w3.org." A fact 
+represented
+                  this way has three parts: a subject, a predicate 
+(i.e., verb), and an object. The subject is what's at the start of the 
+connection,
+                  the predicate is the type of connection (its label), 
+and the object is what's at the end of the connection.
+               </p>
+               <p>The set of documents that make up the RDF 
+specification tell us two important things. First, it outlines the 
+abstract model,
+                  i.e., how to use triples to represent knowledge about 
+the world. Second, it describes how to encode those triples in XML.
+               </p>
+               <p>Most of the abstract model of RDF comes down to four simple rules:
+                  				
+                  </p><ol type="1">
+                     <li>Facts can be expressed as a Subject-Predicate-Object triples, also known as statements. These facts are like little English
+                        sentences.
+                     </li>
+                     <li>Subjects, predicates, and objects are given as 
+names for entities, also called resources (dating back to RDF's 
+application
+                        to metadata for web resources) or nodes (from 
+graph terminology). Entities represent something, a person, website, or 
+something
+                        more abstract like states and relations.
+                     </li>
+                     <li>Names are URIs, which are global in scope, always referring to the same entity in any RDF document in which they appear.</li>
+                     <li>Objects can also be given as text values, called literal values, which may or may not be typed using XML Schema data types.</li>
+                  </ol>
+                  			
+               <p></p>
+               <div class="table">
+                  <h5>Table 1</h5>
+                  <table border="1" width="85%">
+                     <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th>Start Node (Subject)</th>
+                           <th>Connector (Predicate)</th>
+                           <th>End Node (Object)</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        						
+                        
+                        <tr>
+                           <td>http://www.w3.org/People/EM/contact#me</td>
+                           <td>http://www.w3.org/2000/10/swap/pim/contact#fullName</td>
+                           <td>Eric Miller</td>
+                        </tr>
+                        						
+                        
+                        <tr>
+                           <td>http://www.w3.org/People/EM/contact#me</td>
+                           <td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td>
+                           <td>http://www.w3.org/2000/10/swap/pim/contact#Person</td>
+                        </tr>
+                        						
+                        
+                        <tr>
+                           <td>http://www.w3.org/People/EM/contact#me</td>
+                           <td>http://www.w3.org/2000/10/swap/pim/contact#mailbox</td>
+                           <td>mailto:em@w3.org</td>
+                        </tr>
+                        						
+                        
+                        <tr>
+                           <td>http://www.w3.org/People/EM/contact#me</td>
+                           <td>http://www.w3.org/2000/10/swap/pim/contact#personalTitle</td>
+                           <td>Dr.</td>
+                        </tr>
+                        					
+                     </tbody>
+                  </table>
+               </div>
+               <p>The table above illustrates the set of statements made in the graph. Each row in the triples table represents a fact. This
+                  satisfies the need for being able to represent knowledge as a graph.
+               </p>
+               <p>URIs provide the globally unique, distributed naming 
+system we need for distributed knowledge. URIs can have the same syntax
+                  or format as website addresses (
+                  				URLs [Uniform Resource Locators]), so you will see
+ RDF files that contain URIs, such as 
+http://www.w3.org/1999/02/22-rdf-syntax-ns#type. The fact that it
+                  looks like a web address is totally incidental. There 
+may or may not be an actual website at that address, and it doesn't
+                  matter for RDF. It is just a very verbose identifier. 
+(Although sometimes there is something useful at the address.) There
+                  are also other types of URIs besides http: URIs, such 
+as URNs and TAGs, which you'll see below. URIs are used as global names
+                  because they provide a way to break down the space of 
+all possible names into units that have obvious owners. Since URIs can
+                  be quite long, in RDF notations they're usually 
+abbreviated using the concept of namespaces from XML.
+               </p>
+               <p>Literal values, like "Eric Miller," allow text to be 
+included in RDF. This is used heavily when RDF is used for metadata,
+                  its original purpose. In fact, literal values are 
+primarily what tie RDF to the real world, since URIs are just arbitrary
+                  strings.
+               </p>
+               <p>These concepts form most of the abstract RDF model for
+ encoding knowledge. It's analogous to the common
+                  				API [Application Programming Interface] that most 
+XML libraries provide. If it weren't for curious humans always peeking 
+into files, the actual format of XML wouldn't
+                  matter so much as long as we had our appendChild, 
+setAttribute, etc. Of course, we do need a common file format for 
+exchanging
+                  data, which RDF provides.
+               </p>
+            </div>
+            <div class="section">
+               <h2><a name="t5">
+                     <!-- anchor --></a>Introducing AIMEE
+               </h2>
+               <p>At last year's Extreme Markup Languages conference I 
+presented Semetag, which collects metadata from common applications 
+using
+                  RDF and manages it in an integrated package.  In the 
+time since the last conference Semetag has migrated from a standalone
+                  desktop application to a web-based application (<a href="http://www.semetag.com/" target="_blank">http://www.semetag.com</a>).
+  One portion of the system that was not complete last year was an 
+interface between an AIML-based chat system and the RDF
+                  metadata that had been collected and managed by the 
+system. The result is
+                  				AIMEE [Artificially Intelligent Metadata Enabled 
+Entity].  AIMEE consists of the basic ALICE knowledge base, but is also 
+connected to the components of the Semetag system in order
+                  to "learn" from their metadata and other metadata that
+ is collected from the Internet.  This section will discuss some of
+                  the more familiar RDF-based standards such as Dublin 
+Core and FOAF, but it is planned that many other applications (such as
+                  Musicbrainz,
+                  				CIA [Central Intelligence Agency] World Factbook, 
+etc.) will also be incorporated into the system prior to the conference.
+               </p>
+               <p>Semetag uses the Jena Semantic Web framework to manage the RDF metadata stored within the application.  A JDBC-enabled database
+                  (MySQL) is used to allow persistence of the data models.  Jena includes an RDF API, an
+                  				OWL [Web Ontology Language] API, query capabilities using
+                  				RDQL [RDF Data Query Language] and a rule-based inference engine.
+               </p>
+               <p>The AIML engine described within the paper also resides on the server and stores its knowledge base within MySQL.  Java and
+                  PHP are used to tie the two systems together.
+               </p>
+            </div>
+            <div class="section">
+               <h2><a name="t6">
+                     <!-- anchor --></a>Creating AIML categories from RDF Triples
+               </h2>
+               <p>As we have seen in the RDF discussion, RDF triples 
+look very much like simple sentences.  In theory it should be relatively
+                  straightforward to take the triples and create simple 
+statements from them.  These simple statements could form the basis
+                  of a set of <tt class="code">&lt;template&gt;</tt> 
+elements within an AIML knowledge set. Based on the RDF example shown in
+ the previous section, it is possible to build simple
+                  statements such as "Eric Miller's email address is 
+em@w3.org." or "Eric Miller's title is 'Dr.'."  Further inferences could
+                  also be made based on domain knowledge such as "Eric 
+Miller works for W3C.".  The other, perhaps more difficult, part of the
+                  equation is the development of the <tt class="code">&lt;pattern&gt;</tt> elements to trigger the template responses.
+               </p>
+               <p>In order to create the patterns that a user might 
+enter, it is necessary to be familiar with the RDF data being added to 
+AIMEE's
+                  brain.  This can be done through analysis of the RDF 
+data itself.  However, if an RDF or OWL schema is available for the data
+                  set, the quality of the patterns can be increased 
+significantly. Returning again to the RDF example, we see that the 
+resources
+                  identified as "http://www.w3.org/People/EM/contact#me"
+ is of type "http://www.w3.org/2000/10/swap/pim/contact#Person". This
+                  allows us to know that questions about this resources 
+might begin with "Who". There are other metadata items included that
+                  would indicate questions that begin with "What".  
+Using the email example, the following AIML category can be created:
+                  				
+                  
+                  </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;WHAT IS ERIC MILLERS EMAIL ADDRESS&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;set name="he"&gt;
+      &lt;set name="topic"&gt;Eric Miller&lt;/set&gt;
+    &lt;/set&gt;'s email address is &lt;a href="mailto:em@w3.org"&gt;em@w3.org&lt;/a&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>
+                  			
+               <p></p>
+               <p>The category shown above establishes a simple question
+ and response dialog.  If the user enters "What is Eric Miller's email
+                  address?", the bot will respond "Eric Miller's email 
+address is em@w3.org." with the address linkable if a web browser is
+                  being used as the display mechanism.  However, the 
+only way to get this response is to enter the question exactly as shown.
+                   AIML allows patterns to be set up which provide more 
+flexible conversations.
+               </p>
+               <p>The categories shown below extend the previous example to allow other forms of query
+                  				
+                  
+                  </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;WHAT IS ERIC MILLERS EMAIL ADDRESS&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;ERIC MILLER EMAIL&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;ERIC MILLER EMAIL&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;set name="he"&gt;
+      &lt;set name="topic"&gt;Eric Miller&lt;set&gt;
+    &lt;set&gt;'s email address is &lt;a href="mailto:em@w3.org"&gt;em@w3.org&lt;/a&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;PLEASE GIVE * ERIC MILLERS EMAIL *&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;ERIC MILLER EMAIL&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ ERIC MILLERS EMAIL * &lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;ERIC MILLER EMAIL&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ ERIC MILLER * EMAIL * &lt;/pattern&gt;
+  &lt;template&gt;
+      &lt;srai&gt;ERIC MILLER EMAIL&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>
+                  			
+               <p></p>
+               <p>The first category is nearly identical to the previous
+ example.  The main difference is that it now references a generic 
+category
+                  (the 2nd one) using the &lt;srai&gt; tag.  The third 
+category will allow the bot to respond to a request such as "Please give
+ me
+                  Eric Miller's email address".  The "*" character 
+allows any number of words to appear in its place and still match the 
+pattern.
+                   Unlike the "_" character, the "*" also holds the text
+ in memory for use in the <tt class="code">&lt;star&gt;</tt> element within the <tt class="code">&lt;template&gt;</tt>.
+ The fourth category will allow the bot to respond to a request such as 
+"Can you tell me Eric Miller's email address?" or
+                  "Give me Eric Miller's email."  The "_" character 
+specifies that any number of words can occur prior to the specified 
+pattern.
+                   The last category will allow the bot to respond to a 
+request such as "How do I contact Eric Miller by email?"  The last three
+                  categories also reference the 2nd generic category 
+making it possible to define a single response to any number of possible
+                  queries (see the "Synonyms" recursion discussion 
+earlier in this paper).  This makes the task of maintaining the 
+knowledge
+                  base much easier.
+               </p>
+               <p>The keys to being able to build a reasonably complete 
+knowledge base are two-fold.  First is the domain knowledge of the RDF
+                  or OWL schema being used for a particular set of data.
+  Second is knowledge of the tendencies of the users in how they 
+interact
+                  with the bot.
+               </p>
+               <p>If other queries are encountered that the bot does not know how to handle, they can be added to the core template for the
+                  RDF property and that portion of AIMEE's "brain" can be rebuilt.
+               </p>
+               <p>The key to being able to convert RDF triples to AIML 
+that makes sense from a natural language viewpoint is the schema for
+                  the RDF.  A logical starting point for the creation of
+ AIML patterns and templates is the rdf:label for the subject, property
+                  and object of each triple.
+               </p>
+               <p>By knowing the constraints defined within the schema, 
+we can determine that the property contact:fullname contains a string
+                  ("Eric Miller") that can be used as a textual 
+representation for the resource with the URI 
+"http://www.w3.org/People/EM/contact#me".
+                  We also see that this resource has a type represented 
+by the URI "http://www.w3.org/2000/10/swap/pim/contact#Person". This
+                  allows us to assume that we can phrase pattern 
+questions using the pronoun "Who", such as "Who is Eric Miller?". Unlike
+ Jeopardy,
+                  not all patterns need to be in the form of a question.
+ Some could be statements, such as "Tell me about Eric Miller."
+               </p>
+               <p>The rdf:label for the property presents a different 
+kind of challenge.  In English, the property usually contains a full 
+phrase
+                  that ties the subject and object together. The schema 
+may or may not include a label that is complete enough for this purpose
+                  and, therefore, could be extended. There are also 
+instances where simple extension is not enough and a query must be used
+                  to fully build the pattern and template.  For example,
+ the rdf:label for contact:mailbox might only consist of the word 
+"email".
+                   In order to create a statement like "Eric Miller's 
+email address is em@w3.org, the rdf:label for the property must be 
+extended
+                  to "email address is".  Another solution would be to 
+use a query mechanism to find the triples and format the patterns and
+                  templates based on the query results. This will be 
+discussed in more detail shortly.
+               </p>
+               <p>The object within the triple may consist of an RDF 
+resource or it might simply contain text.  If the object refers to a 
+resource,
+                  then we can use a method similar to that used for the 
+subject to find an acceptable textual value to use for the patterns
+                  and template. If the object is already a string of 
+text, then it could be used directly.
+               </p>
+               <p>We have been looking at how triples can be converted 
+into AIML patterns and templates. However, you might have noticed a 
+small
+                  challenge. Many of the triples do not form statements 
+that a user would enter in natural language. For example, a user will,
+                  most likely, not enter a URI and try to match it to a 
+name or email address or whatever. In the example, we are using the
+                  object of the triple whose property is 
+"contact:fullName" as the subject within the triple whose property is 
+"contact:mailbox"
+                  along with the string contained within the object. In 
+order to do this a set of queries must be developed in order to find
+                  the pieces of information needed to construct sensible
+ statements. This methodology provides several benefits:
+                  				
+                  </p><ul>
+                     <li>eliminates the need to modify a schema that we might not control;</li>
+                     <li>more power in finding the most useful pieces of information in order to build the pattern/template; and,</li>
+                     <li>more flexibility in the definition of the pattern/template.</li>
+                  </ul>These benefits will be taken into account as we 
+examine a couple of industry standard schemas, the Dublin Core Metadata 
+Initiative
+                  and FOAF, and how data marked using these schemas can 
+be imported into AIMEE's knowledge base.
+                  			
+               <p></p>
+               <p>The use of RDF to build AIMEE's knowledge base also 
+addresses the targeting issue mentioned earlier in this paper. One of
+                  the main challenges of defining a bot's personality is
+ the process of adding information.  By using publicly available and
+                  hopefully accurate RDF data sets, the problem of 
+finding a source of the information is alleviated.  This leaves the 
+interaction
+                  with the user as the remaining challenge. By reviewing
+ how the users interact with the information and finding areas where
+                  AIMEE did not respond in the most appropriate manner, 
+new rules can be created and new AIML files can be generated that take
+                  these edge case into account and prepares her for them
+ in the future.
+               </p>
+            </div>
+            <div class="section">
+               <h2><a name="t7">
+                     <!-- anchor --></a>AIMEE and the Dublin Core
+               </h2>
+               <p>The Dublin Core Metadata Initiative was founded in 
+1995 and has become one of the preeminent standards for web metadata. 
+                  It consists of 15 elements that can be used to 
+describe written materials on the web, such as HTML pages.  While any of
+ the
+                  15 elements can be used to generate natural language 
+statements, a set of 11 seems more useful to start, than the others.
+                   These 11 include:
+                  				
+                  </p><ul>
+                     <li>identifier - an unambiguous reference to the resource within a given context, possibly a URI, URL,
+                        							DOI [Document Object Identifier], or
+                        							ISBN [International Standard Book Number]
+                        						
+                     </li>
+                     <li>creator - an entity primarily responsible for making the content of the resource, typically the name of the creating entity</li>
+                     <li>contributor - an entity responsible for making 
+contributions to the content of the resource, typically the name of the 
+contributing
+                        entity
+                     </li>
+                     <li>publisher - the entity responsible for making the resource available, typically the name of the publishing entity</li>
+                     <li>subject - the topic of the content of the resource, typically expressed as keywords, phrases, or classification codes</li>
+                     <li>description - an account of the content of the resource</li>
+                     <li>title - the name given to a resource, typically the formal name by which the resource is known</li>
+                     <li>type - the nature or genre of the content of a resource</li>
+                     <li>relation - a reference to a related resource</li>
+                     <li>date - a date associated with an event in the life cycle of the resource, typically the date of creation or availability of
+                        the resource
+                     </li>
+                     <li>coverage - the extent or scope of the content of the resource, typically including spatial locations, temporal period, or
+                        jurisdiction
+                     </li>
+                  </ul>
+                  			
+               <p></p>
+               <p>In this section we will be considering the following Dublin Core example:
+                  			
+                  
+                  </p><div class="codeblock"><pre>&lt;rdf:RDF
+  xmlns:rdf="http://www.w3c.org/RDF/"
+  xmlns:dc="http://purl.org/RDF/DC/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"&gt;
+  &lt;rdf:Description rdf:about="http://purl.org/metadata/dublin_core_elements"&gt;
+    &lt;dc:Title&gt;
+	  Dublin Core Metadata Element Set: Reference Description
+	&lt;/dc:Title&gt;
+    &lt;dc:Creator rdf:resource="http://purl.net/people/eric"/&gt;
+    &lt;dc:Creator rdf:resource="http://purl.net/people/stu"/&gt;
+    &lt;dc:Subject&gt;
+	  Metadata, Dublin Core element, resource description
+	&lt;/dc:Subject&gt;
+    &lt;dc:Description&gt;This document is the reference description of the Dublin Core
+      Metadata Element Set designed to facilitate resource discovery.&lt;/dc:Description&gt;
+    &lt;dc:Publisher&gt;OCLC Online Computer Library Center, Inc.&lt;/dc:Publisher&gt;
+    &lt;dc:Type&gt;Technical Report&lt;/dc:Type&gt;
+    &lt;dc:Date&gt;1997-11-02&lt;/dc:Date&gt;
+    &lt;dc:Relation&gt;
+      &lt;rdf:Description&gt;
+         &lt;dc:Relation.Type&gt;IsBasisFor&lt;/dc:Relation.Type&gt;
+         &lt;dc:Relation.Identifier&gt;
+                ftp://ftp.ietf.org/internet-drafts/draft-kunze-dc-02.txt
+         &lt;/dc:Relation.Identifier&gt;
+         &lt;dc:Title&gt;Dublin Core Metadata for Simple Resource Discovery&lt;/dc:Title&gt;
+         &lt;dc:Creator rdf:resource="http://purl.net/people/stu"/&gt;
+         &lt;dc:Creator&gt;John A. Kunze&lt;/dc:Creator&gt;
+         &lt;dc:Creator&gt;Carl Lagoze&lt;/dc:Creator&gt;
+         &lt;dc:Type&gt;Internet RFC&lt;/dc:Type&gt;
+      &lt;/rdf:Description&gt;
+    &lt;/dc:Relation&gt;
+  &lt;/rdf:Description&gt;
+
+  &lt;rdf:Description rdf:about="http://purl.net/people/eric"&gt;
+    &lt;owl:sameAs rdf:resource="http://www.w3.org/People/EM/contact#me"/&gt;
+  &lt;/rdf:Description&gt;
+
+&lt;/rdf:RDF&gt;</pre></div> This example describes a technical report 
+written by Eric Miller and Stu Weibel entitled "Dublin Core Metadata 
+Element Set:
+                  Reference Description".  The second entry uses OWL to 
+say that one of the creators of this document is the same person whose
+                  contact information we have been discussing throughout
+ this paper. It should be noted that it is through entries such as the
+                  second one that it becomes possible to start 
+aggregating knowledge about certain resources.
+               <p></p>
+               <p>If we look at this sample, we can see several statements that can be made about the document being described that would work
+                  well as templates within an AIML file.  For example,
+                  				
+                  </p><ul>
+                     <li>Eric Miller and Stu Weibel created a technical report entitled 'Dublin Core Metadata Element Set: Reference Description.'</li>
+                     <li>Eric Miller created this document. He created this document with Stu Weibel. (and vice versa)</li>
+                     <li>This document discusses the subjects of metadata, Dublin Core element, and resource description.</li>
+                     <li>This document can be summarized as follows: 'This document is the reference description of the Dublin Core Metadata Element
+                        Set designed to facilitate resource discovery.'
+                     </li>
+                     <li>This document was published by OCLC Online Computer Library Center, Inc.</li>
+                     <li>This document is the basis for another document entitled 'Dublin Core Metadata for Simple Resource Discovery.'</li>
+                  </ul>
+                  			
+               <p></p>
+               <p>Once we have identified pieces of information that 
+would work well within AIMEE's brain, we must consider the pattern's 
+that
+                  a user might enter in searching for this information. 
+ In the first round we'll concentrate on some sample questions and then
+                  look for opportunities to use recursion and reduction 
+to simplify the AIML while also making it more flexible.  Candidate
+                  initial questions could include:
+                  				
+                  </p><ul>
+                     <li>What works has Eric Miller created?</li>
+                     <li>What subjects are discussed in the document "Dublin Core Metadata Element Set: Reference Description?"</li>
+                     <li>Please summarize this document.</li>
+                     <li>Who published the document?</li>
+                  </ul>The following sections will use some of the Dublin Core elements to create <tt class="code">&lt;category&gt;</tt> elements for use within AIMEE's brain.
+                  			
+               <p></p>
+               <div class="subsec1">
+                  <h3><a name="t7-1">
+                        <!-- anchor --></a>dc:Creator
+                  </h3>
+                  <p><i>What works has Eric Miller created?</i> - We 
+could also use Stu Weibel as the subject.  We can also use different 
+verb synonyms based on the type of the resource.
+                      In the case of a technical report, "written" or 
+"authored" would also work.  (This would be an excellent use case for 
+the
+                     addition of the Wordnet RDF dataset within AIMEE's 
+brain as well.)
+                  </p>
+                  <p>You may recall a statement made earlier that a set 
+of queries would be beneficial in the development of the AIML patterns
+                     and templates.  This will be demonstrated now.  
+Upon further examination of the RDF, there is not a single triple that 
+provides
+                     all the data needed to build this pattern and the 
+template.  Instead, the dataset will need to be queried using an RDF 
+query
+                     language such as SPARQL, SeRQL, RQL, RDQL, etc.  
+For simplicity, this paper will use pseudo-code rather than a particular
+                     language.
+                  </p>
+                  <p>To build the pattern, first we need to query for all the values of <tt class="code">&lt;dc:Creator&gt;</tt>.  Once we have the list of resource creators, we can query for all the resources that were created by each <tt class="code">&lt;dc:Creator&gt;</tt>.  Finally we need to retrieve the <tt class="code">&lt;dc:Title&gt;</tt> for each resource.  Based on the example above, the query should return one resource created by Eric Miller and two created
+                     by Stu Weibel.  One of these resources was created by both.
+                  </p>
+                  <p>Based on those results the following AIML can be created:
+                     					
+                     
+                     </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;DUBLINCORE WORKS ERIC MILLER CREATED&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;set name="he"&gt;&lt;set name="topic"&gt;Eric Miller&lt;/set&gt;&lt;/set&gt; created a
+    technical report entitled '&lt;set name="it"&gt;&lt;set name="documentname1"&gt;&lt;set
+    name="documentname"&gt;Dublin Core Metadata Element Set: Reference
+    Description&lt;/set&gt;&lt;/set&gt;&lt;/set&gt;'.
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;WHAT * HAS ERIC MILLER CREATED&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE WORKS ERIC MILLER CREATED&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;WHAT * HAS ERIC MILLER WRITTEN&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE WORKS ERIC MILLER CREATED&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;DUBLINCORE WORKS STU WEIBEL CREATED&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;set name="he"&gt;&lt;set name="topic"&gt;Stu Weibel&lt;/set&gt;&lt;/set&gt; created [1] a
+    technical report entitled '&lt;set name="documentname1"&gt;Dublin Core Metadata
+    Element Set: Reference Description&lt;/set&gt;.' He also created [2] an Internet
+    RFC entitled '&lt;set name="documentname2"&gt;Dublin Core Metadata for Simple
+    Resource Discovery&lt;/set&gt;.'
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;WHAT * HAS STU WEIBEL CREATED&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE WORKS STU WEIBEL CREATED&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;WHAT * HAS STU WEIBEL WRITTEN&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE WORKS STU WEIBEL CREATED&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>In the set of <tt class="code">&lt;category&gt;</tt>
+ elements for Eric Miller, we see the base category which provides AIMEE
+ with the answer to any number of possible queries.
+                     It is unlikely that a user will enter the string 
+"DUBLINCORE WORKS ERIC MILLER CREATED", but this provides a central 
+location
+                     to which any number of patterns can point using <tt class="code">&lt;srai&gt;</tt>. The two subsequent <tt class="code">&lt;category&gt;</tt> elements provide examples of ways in which the query might be phrased by a user. The use of the <tt class="code">&lt;set&gt;</tt>
+ elements allows AIMEE to store some context for the discussion.  The 
+"it" variable allows AIMEE to keep track of the current
+                     thing being discussed.  The "topic" variable is 
+very similar but, in this case, is set to the value of "Eric Miller" as 
+the
+                     topic or subject of the discussion.  Each document 
+from the query will be counted and assigned a number, e.g. 
+"documentname1",
+                     "documentname2", etc.  The "documentname" variable 
+is used to store the name of the document being discussed.
+                     				
+                  <p></p>
+                  <p>The second set of three <tt class="code">&lt;category&gt;</tt> elements contain the information for the resources created by Stu Weibel.  Notice that the <tt class="code">&lt;template&gt;</tt>
+ is somewhat different that the one for Eric Miller.  Since Stu has 
+written more than one document, we must devise a way to
+                     indicate this to the user and provide a mechanism 
+where the user is not forced to enter the entire title of the document.
+                      We will see how this is used in the following 
+section.
+                  </p>
+               </div>
+               <div class="subsec1">
+                  <h3><a name="t7-2">
+                        <!-- anchor --></a>dc:Subject
+                  </h3>
+                  <p><i>What subjects are discussed in the document "Dublin Core Metadata Element Set: Reference Description?"</i>
+ - If this document has been presented to the user in a prior statement,
+ this would be an ideal candidate for the use of the
+                     contextual capabilities of AIML.  The user will not
+ want to continually enter the long title, so other patterns should be
+                     developed that allow the user to use words like 
+"it" or "the document".
+                  </p>
+                  <p>To build the pattern, we need to query for the all the resources that have one or more <tt class="code">&lt;dc:Subject&gt;</tt> elements defined.  We also need to retrieve the <tt class="code">&lt;dc:Title&gt;</tt> for each resource in the list.  Based on the example above, the query should return only one resource.
+                  </p>
+                  <p>
+                     					
+                     
+                     </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;DUBLINCORE DOCUMENT SUBJECTS&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;condition name="documentname"&gt;
+      &lt;li value="Dublin Core Metadata Element Set: Reference
+      Description"&gt;&lt;get name="documentname"/&gt; discusses the subjects Metadata,
+      Dublin Core element, resource description&lt;/li&gt;
+      &lt;li&gt;Which document are you asking about?&lt;/li&gt;
+    &lt;/condition&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;DOCUMENT *&lt;/pattern&gt;
+  &lt;that&gt;WHAT DOCUMENT ARE YOU ASKING ABOUT&lt;/that&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT &lt;star/&gt; SUBJECTS&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;THE FIRST ONE&lt;/pattern&gt;
+  &lt;that&gt;WHAT DOCUMENT ARE YOU ASKING ABOUT&lt;/that&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT 1 SUBJECTS&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ SUBJECTS * IN * DOCUMENT&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT SUBJECTS&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ SUBJECTS * OF * DOCUMENT&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT SUBJECTS&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ TOPICS * IN * DOCUMENT&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT SUBJECTS&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ TOPICS * OF * DOCUMENT&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT SUBJECTS&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;DUBLINCORE DOCUMENT * SUBJECTS&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;think&gt;&lt;set name="documentnumber"&gt;&lt;star/&gt;&lt;/set&gt;&lt;/think&gt;
+    &lt;condition name="documentnumber"&gt;
+	  &lt;li value="1"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+        &lt;get name="documentname1"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+	  &lt;li value="2"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+        &lt;get name="documentname2"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+	  &lt;li value="3"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+        &lt;get name="documentname3"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+      ...
+      &lt;li value="10"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+        &lt;get name="documentname10"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+    &lt;/category&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT SUBJECTS&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ SUBJECTS * OF DOCUMENT *&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT &lt;star index="2"/&gt; SUBJECTS&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ TOPICS * IN DOCUMENT *&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT &lt;star index="2"/&gt; SUBJECTS&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ TOPICS * OF DOCUMENT *&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT &lt;star index="2"/&gt; SUBJECTS&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>As in the previous set of <tt class="code">&lt;category&gt;</tt> elements, a generic base pattern is created and several other patterns then point to it.  The <tt class="code">&lt;condition&gt;</tt>
+ element checks to see whether AIMEE has set a value for the 
+"documentname" variable.  If so, she can respond accordingly.
+                      If not, she will tell the user that shew doesn't 
+know which document is being discussed.  However, in the second set of <tt class="code">&lt;category&gt;</tt> elements we take advantage of AIMEE's ability to recall context and allow the user to ask shorter questions.  If you recall
+                     in the <tt class="code">&lt;category&gt;</tt> elements created for <tt class="code">&lt;dc:Creator&gt;</tt>,
+ Stu Weibel is credited with creating 2 documents.  The user will need 
+to specify to AIMEE which document they are discussing.
+                      This can be done using an string such as "What are
+ the subjects discussed in document 2?" AIMEE will match the pattern and
+                     set the "documentname" variable to the title of the
+ second document, represented by the "documentname2" variable.  Once she
+                     has set that context, she can then proceed to 
+answer the question.
+                     				
+                  <p></p>
+               </div>
+               <div class="subsec1">
+                  <h3><a name="t7-3">
+                        <!-- anchor --></a>dc:Description
+                  </h3>
+                  <p>	<i>Please summarize this document.</i> - The user can enter statements as well as commands and the AIML developer needs to take this possibility into account when
+                     developing the patterns for a given dataset.
+                  </p>
+                  <p>To build the pattern, we need to query for all the resources that have one or more <tt class="code">&lt;dc:Description&gt;</tt> elements defined.  We also need to retrieve the <tt class="code">&lt;dc:Title&gt;</tt> for each resource in the list.  Based on the example above, the query should return only one resource.
+                  </p>
+                  <p>
+                     					
+                     
+                     </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;DUBLINCORE SUMMARIZE DOCUMENT&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;condition name="documentname"&gt;
+      &lt;li value="Dublin Core Metadata Element Set: Reference Description"&gt;
+        This document is the reference description of the Dublin Core Metadata
+        Element Set designed to facilitate resource discovery.&lt;/li&gt;
+      &lt;li&gt;I don't have a summary for the document.&lt;/li&gt;
+    &lt;/condition&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ SUMMARIZE * DOCUMENT&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE SUMMARIZE DOCUMENT&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ SUMMARY * DOCUMENT&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE SUMMARIZE DOCUMENT&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;DUBLINCORE SUMMARIZE DOCUMENT *&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;think&gt;&lt;set name="documentnumber"&gt;&lt;star/&gt;&lt;/set&gt;&lt;/think&gt;
+    &lt;condition name="documentnumber"&gt;
+	  &lt;li value="1"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+        &lt;get name="documentname1"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+	  &lt;li value="2"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+        &lt;get name="documentname2"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+	  &lt;li value="3"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+        &lt;get name="documentname3"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+      ...
+      &lt;li value="10"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+      &lt;get name="documentname10"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+    &lt;/condition&gt;
+    &lt;srai&gt;DUBLINCORE SUMMARIZE DOCUMENT&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ SUMMARIZE * DOCUMENT *&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE SUMMARIZE DOCUMENT *&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ SUMMARY * DOCUMENT *&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE SUMMARIZE DOCUMENT *&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>This set of <tt class="code">&lt;category&gt;</tt>
+ elements works very much like the previous set. The main difference is 
+the ability to respond to a directive in addition
+                     to answering a question.  The user could enter 
+"Please summarize document 2" or "How would you summarize the document?"
+ and
+                     get the same results.
+                     				
+                  <p></p>
+               </div>
+               <div class="subsec1">
+                  <h3><a name="t7-4">
+                        <!-- anchor --></a>dc:Publisher
+                  </h3>
+                  <p><i>Who published the document?</i> - In English, corporate entities can also be referred to using personal pronouns.  The patterns will also need to handle
+                     beginnings such as "What organization ..." or "What company ..."
+                  </p>
+                  <p>To build the pattern, we need to query for all the resources that have one or more <tt class="code">&lt;dc:Publisher&gt;</tt> elements defined.  We also need to retrieve the <tt class="code">&lt;dc:Title&gt;</tt> for each resource in the list.  Based on the example above, the query should return only one resource.
+                  </p>
+                  <p>
+                     					
+                     
+                     </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;DUBLINCORE DOCUMENT PUBLISHER&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;condition name="documentname"&gt;
+      &lt;li value="Dublin Core Metadata Element Set: Reference Description"&gt;
+	    &lt;get name="documentname"/&gt; was published by OCLC Online Computer
+	    Library Center, Inc.
+	  &lt;/li&gt;
+      &lt;li&gt;I don't know who published this document.&lt;/li&gt;
+    &lt;/condition&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ PUBLISHED * DOCUMENT&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT PUBLISHER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;DUBLINCORE DOCUMENT * PUBLISHER&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;think&gt;&lt;set name="documentnumber"&gt;&lt;star/&gt;&lt;/set&gt;&lt;/think&gt;
+    &lt;condition name="documentnumber"&gt;
+	  &lt;li value="1"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+        &lt;get name="documentname1"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+	  &lt;li value="2"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+        &lt;get name="documentname2"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+	  &lt;li value="3"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+        &lt;get name="documentname3"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+      ...
+      &lt;li value="10"&gt;&lt;set name="it"&gt;&lt;set name="documentname"&gt;
+        &lt;get name="documentname10"/&gt;&lt;/set&gt;&lt;/set&gt;&lt;/li&gt;
+    &lt;/condition&gt;
+    &lt;srai&gt;DUBLINCORE DOCUMENT PUBLISHER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ PUBLISHED * DOCUMENT *&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;DUBLINCORE SUMMARIZE DOCUMENT *&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>This set of <tt class="code">&lt;category&gt;</tt> elements is very similar to the previous sets.  Other Dublin Core elements could be processed in the same way, but in the
+                     interest of space, they won't be discussed in this paper.
+                     				
+                  <p></p>
+               </div>
+            </div>
+            <div class="section">
+               <h2><a name="t8">
+                     <!-- anchor --></a>Introducing AIMEE to Your Friends using FOAF
+               </h2>
+               <p>The FOAF [Friend of a Friend] project is an effort to 
+define an RDF vocabulary for expressing metadata about people, and their
+ interests, relationships
+                  and activities. The basic categories of information it
+ defines are:
+                  				
+                  </p><ul>
+                     <li>foaf:Person</li>
+                     <li>foaf:Document</li>
+                     <li>foaf:Image</li>
+                  </ul>
+               <p></p>
+               <p>
+                  				There are five classes of properties which define the categories:
+                  				
+                  </p><ul>
+                     <li>the basic class contains information such as names, home pages, and email addresses;</li>
+                     <li>the personal information class contains more detailed information including who a person knows, their interests and projects;</li>
+                     <li>an online accounts class contains information about the various online identities a person might have using different chat
+                        servers and other online accounts;
+                     </li>
+                     <li>a projects and groups class includes information on any projects or groups of which the person might be a part;</li>
+                     <li>a documents and images class allows files to be attached to a person's information using the <tt class="code">&lt;foaf:depiction&gt;</tt> element.
+                     </li>
+                  </ul>  An example of FOAF markup (with some Dublin Core) is shown below.
+                  				
+                  
+                  <div class="codeblock"><pre>&lt;rdf:RDF
+  xmlns:rdf="http://www.w3c.org/RDF/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"&gt;
+
+&lt;foaf:Person rdf:about="http://www.w3.org/People/EM/contact#me"&gt;
+  &lt;foaf:name&gt;Eric Miller&lt;/foaf:name&gt;
+  &lt;foaf:firstName&gt;Eric&lt;/foaf:firstName&gt;
+  &lt;foaf:surname&gt;Miller&lt;/foaf:surname&gt;
+  &lt;foaf:mbox rdf:resource="mailto:em@csail.mit.edu"/&gt;
+  &lt;foaf:mbox rdf:resource="mailto:em@zepheira.com"/&gt;
+  &lt;foaf:depiction&gt;
+    &lt;foaf:Image rdf:about=
+        "http://www.ilrt.bristol.ac.uk/people/cmdjb/events/dc7/orig/eric.png"&gt;
+      &lt;dc:Thumbnail rdf:resource=
+        "http://www.ilrt.bristol.ac.uk/people/cmdjb/events/dc7/orig/eric.png"/&gt;
+      &lt;dc:Title&gt;Eric Miller, relaxing.&lt;/dc:Title&gt;
+      &lt;dc:Description&gt;Eric Miller, relaxing.&lt;/dc:Description&gt;
+      &lt;dc:Format&gt;image/png&lt;/dc:Format&gt;
+    &lt;foaf:/Image&gt;
+  &lt;foaf:/depiction&gt;
+  &lt;foaf:homepage rdf:resource="http://purl.org/net/eric/"/&gt;
+  &lt;foaf:homepage rdf:resource="http://www.w3.org/People/EM/" /&gt;
+  &lt;rdfs:seeAlso rdf:resource="http://purl.org/net/eric/webwho.xrdf"/&gt;
+  &lt;foaf:workplaceHomePage rdf:resource="http://zepheira.com/" /&gt;
+  &lt;foaf:nick&gt;em&lt;/foaf:nick&gt;
+  &lt;foaf:knows&gt;
+    &lt;foaf:Person rdf:about="http://www.w3.org/People/Berners-Lee/card#i"&gt;
+      &lt;foaf:name&gt;Tim Berners-Lee&lt;/foaf:name&gt;
+      &lt;foaf:isPrimaryTopicOf rdf:resource=
+        "http://en.wikipedia.org/wiki/Tim_Berners-Lee"/&gt;
+      &lt;foaf:homepage rdf:resource="http://www.w3.org/People/Berners-Lee/"/&gt;
+      &lt;foaf:mbox rdf:resource="mailto:timbl@w3.org"/&gt;
+      &lt;rdfs:seeAlso rdf:resource="http://www.w3.org/People/Berners-Lee/card"/&gt;
+    &lt;/foaf:Person&gt;
+  &lt;/foaf:knows&gt;
+  &lt;foaf:knows&gt;
+    &lt;foaf:Person rdf:ID="dajobe"&gt;
+      &lt;foaf:name&gt;Dave Beckett&lt;/foaf:name&gt;
+      &lt;foaf:mbox rdf:resource="mailto:dave.beckett@bristol.ac.uk"/&gt;
+    &lt;/foaf:Person&gt;
+  &lt;/foaf:knows&gt;
+  &lt;foaf:knows&gt;
+    &lt;foaf:Person rdf:ID="matola"&gt;
+      &lt;foaf:name&gt;Tod Matola&lt;/foaf:name&gt;
+      &lt;foaf:mbox rdf:resource="mailto:matola@oclc.org"/&gt;
+  &lt;/foaf:knows&gt;
+  &lt;foaf:knows&gt;
+    &lt;foaf:Person rdf:ID="danbri"&gt;
+      &lt;foaf:name&gt;Dan Brickley&lt;/foaf:name&gt;
+      &lt;foaf:mbox rdf:resource="mailto:danbri@w3.org"/&gt;
+    &lt;/foaf:Person&gt;
+  &lt;/foaf:knows&gt;
+  &lt;foaf:knows&gt;
+    &lt;foaf:Person rdf:ID="weibel"&gt;
+      &lt;foaf:name&gt;Stu Weibel&lt;/foaf:name&gt;
+      &lt;foaf:mbox rdf:resource="mailto:weibel@oclc.org"/&gt;
+      &lt;foaf:workplaceHomePage rdf:resource="http://www.oclc.org" /&gt;
+    &lt;/foaf:Person&gt;
+  &lt;/foaf:knows&gt;
+  &lt;foaf:knows&gt;
+    &lt;foaf:Person rdf:ID="baker"&gt;
+      &lt;foaf:name&gt;Tom Baker&lt;/foaf:name&gt;
+      &lt;foaf:mbox rdf:resource="mailto:thomas.baker@gmd.de"/&gt;
+    &lt;/foaf:Person&gt;
+  &lt;/foaf:friend&gt;
+  &lt;foaf:knows&gt;
+    &lt;foaf:Person rdf:ID="connolly"&gt;
+      &lt;foaf:name&gt;Dan Connolly&lt;/foaf:name&gt;
+      &lt;foaf:mbox rdf:resource="mailto:connolly@w3.org"/&gt;
+    &lt;/foaf:Person&gt;
+  &lt;/foaf:knows&gt;
+  &lt;foaf:knows&gt;
+    &lt;foaf:Person rdf:ID="swick"&gt;
+      &lt;foaf:name&gt;Ralph Swick&lt;/foaf:name&gt;
+      &lt;foaf:mbox rdf:resource="mailto:swick@w3.org"/&gt;
+    &lt;/foaf:Person&gt;
+  &lt;/foaf:knows&gt;
+  &lt;foaf:interest&gt;
+    &lt;rdf:Description rdf:about="http://purl.org/rss"
+      dc:Title="RDF Site Summary (RSS)"/&gt;
+  &lt;/foaf:interest&gt;
+  &lt;foaf:interest&gt;
+    &lt;rdf:Description rdf:about="http://dublincore.org/"
+      dc:Title="Dublin Core Metadata Initiative"/&gt;
+  &lt;/foaf:interest&gt;
+  &lt;foaf:interest&gt;
+    &lt;rdf:Description rdf:about="http://www.w3.org/2001/sw/"
+      dc:Title="Semantic Web"/&gt;
+  &lt;/foaf:interest&gt;
+  &lt;foaf:interest&gt;
+    &lt;rdf:Description rdf:about="http://www.w3.org/RDF/"
+      dc:Title="Resource Description Framework (RDF)"/&gt;
+  &lt;/foaf:interest&gt;
+  &lt;foaf:interest&gt;
+    &lt;rdf:Description rdf:about="http://www.w3.org/XML/"
+      dc:Title="Extensible Markup Language (XML)"/&gt;
+  &lt;/foaf:interest&gt;
+&lt;/foaf:Person&gt;</pre></div>This example describes Eric Miller, how 
+to contact him, who he knows and what some of his interests are. As can 
+be seen, some
+                  of the same information is shown here using FOAF as 
+was shown using a non-standard markup in the RDF section earlier in this
+                  paper.  Using OWL's <tt class="code">&lt;owl:sameAs&gt;</tt> markup we can map the FOAF to the "contact" markup.
+                  
+                  
+                  <div class="codeblock"><pre>&lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:contact="http://www.w3.org/2000/10/swap/pim/contact#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"&gt;
+  &lt;rdf:Description rdf:about="contact:Person"&gt;
+    &lt;owl:sameAs rdf:resource="foaf:Person"/&gt;
+  &lt;/rdf:Description&gt;
+
+  &lt;rdf:Description rdf:about="contact:fullName"&gt;
+    &lt;owl:sameAs rdf:resource="foaf:name"/&gt;
+  &lt;/rdf:Description&gt;
+
+  &lt;rdf:Description rdf:about="contact:mailbox"&gt;
+    &lt;owl:sameAs rdf:resource="foaf:mbox"/&gt;
+  &lt;/rdf:Description&gt;
+
+  &lt;rdf:Description rdf:about="contact:personalTitle"&gt;
+    &lt;owl:sameAs rdf:resource="foaf:title"/&gt;
+  &lt;/rdf:Description&gt;
+&lt;/rdf:RDF</pre></div>In mapping the equivalency of the two markup schemes, we have effectively combined the entries. In doing so, we can also reuse
+                  the AIML generated previously.
+                  			
+               <p></p>
+               <p>If we look at the main FOAF RDF sample, we can see several statements that can be made about Eric Miller that would work well
+                  as templates within an AIML file.  For example,
+                  				
+                  </p><ul>
+                     <li>Eric Miller has several email addresses.</li>
+                     <li>Eric Miller has web pages set up at several URLs.</li>
+                     <li>Eric Miller knows Tim Berners-Lee, Dave Beckett, Tod Matola, Dan Brickley, Stu Weibel, Tom Baker, Dan Connolly and Ralph Swick.</li>
+                     <li>His interests include RDF Site Summary (RSS), Dublin Core Metadata Initiative, Semantic Web, RDF, and XML.</li>
+                  </ul>
+                  			
+               <p></p>
+               <p>Once we have identified pieces of information that 
+would be work well within AIMEE's brain, we must consider the patterns
+                  that a user might enter in searching for this 
+information.  In the first round we'll concentrate on some sample 
+questions
+                  and then look for opportunities to use recursion and 
+reduction to simplify the AIML while also making it more flexible.  
+Candidate
+                  initial questions could include:
+                  				
+                  </p><ul>
+                     <li>What email addresses are associated with Eric Miller?</li>
+                     <li>What web pages are associated with Eric Miller?</li>
+                     <li>Who does Eric Miller know? (and conversely, Who knows Eric Miller?)</li>
+                     <li>What are Eric Miller's interests? (and Who shares an interest with Eric Miller?)</li>
+                  </ul>The following sections will use some of the FOAF elements to create <tt class="code">&lt;category&gt;</tt> elements for use within AIMEE's brain.
+                  			
+               <p></p>
+               <div class="subsec1">
+                  <h3><a name="t8-1">
+                        <!-- anchor --></a>foaf:mbox
+                  </h3>
+                  <p><i>What email addresses are associated with Eric Miller?</i> We will start with the categories defined previously for Eric Miller's email address.  Since the FOAF entry for Eric includes
+                     several addresses, we must extend the model a bit to handle this use case.
+                  </p>
+                  <p>To build the pattern, we need to query the FOAF 
+entry for the person identified by the URI 
+"http://www.w3.org/People/EM/contact#me"
+                     and retrieve all the <tt class="code">&lt;foaf:mbox&gt;</tt> elements defined. We will also query for the <tt class="code">&lt;foaf:name&gt;</tt> element. Based on the example above, the query should return three addresses (2 from the FOAF entry and one from the "contact"
+                     entry earlier in the paper.
+                  </p>
+                  <p>
+                     				
+                     
+                     </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;FOAF MBOX HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/pattern&gt;
+  &lt;template&gt;I have 3 email addresses listed for
+    &lt;set name="he"&gt;
+      &lt;set name="topic"&gt;Eric Miller&lt;/set&gt;
+    &lt;/set&gt;. [1] &lt;a href="mailto:em@w3.org"&gt;em@w3.org&lt;/a&gt;,
+      [2] &lt;a href="mailto:em@csail.mit.edu"&gt;em@csail.mit.edu&lt;/a&gt;,
+      and [3] &lt;a href="mailto:em@zepheira.com"&gt;em@zepheira.com&lt;/a&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;FOAF MBOX WHICH ERIC MILLER&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF MBOX HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;WHAT IS ERIC MILLERS EMAIL ADDRESS&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF MBOX WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;PLEASE GIVE * ERIC MILLERS EMAIL *&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF MBOX WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ ERIC MILLERS EMAIL * &lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF MBOX WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ ERIC MILLER * EMAIL * &lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF MBOX WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>There are some differences in this version 
+of the categories.  First of all we have added the "FOAF MBOX" string to
+ the beginning
+                     of the <tt class="code">&lt;srai&gt;</tt> elements to help denote where the data originated.  We have also changed the name of the base <tt class="code">&lt;category&gt;</tt>
+ to include the URI for Eric Miller.  This change was made to utilize 
+the URI which (we hope) uniquely identifies Eric Miller.
+                      Notice the format of the URI.  AIML drops all 
+punctuation in its patterns, so the resulting names includes only the 
+alphanumeric
+                     characters with spaces in place of the punctuation.
+  There is still the problem of more than one person named "Eric Miller"
+                     being contained within AIMEE's brain. The <tt class="code">&lt;category&gt;</tt>
+ elements have already been set up to handle such as instance in the 
+event that another "Eric Miller" is added to the knowledge
+                     base. In the current setup AIMEE must figure out 
+which "Eric Miller" is being requested.  She determines that there is 
+only
+                     one and proceeds to deliver the requested 
+information. To handle the case of more than person with the same name, 
+the initial
+                     query would need to be modified to first look for 
+all <tt class="code">&lt;foaf:Person&gt;</tt> elements that have a <tt class="code">&lt;foaf:name&gt;</tt> of "Eric Miller". If more than one exists, then a new set of patterns would be needed to allow the user to tell AIMEE which
+                     "Eric Miller" they are asking about. This could be done by looking at additional FOAF properties such as <tt class="code">&lt;foaf:title&gt;</tt>, <tt class="code">&lt;foaf:nickname</tt>, or even <tt class="code">&lt;foaf:knows</tt>.  An example of such a case is shown below for "John Doe":
+                     
+                     
+                     <div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;FOAF MBOX WHICH JOHN DOE&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;condition name="johndoe"&gt;
+      &lt;li value="johndoe1"&gt;&lt;srai&gt;FOAF MBOX HTTP WWW DOCBUBBA COM&lt;/srai&gt;&lt;/li&gt;
+      &lt;li value="johndoe2"&gt;&lt;srai&gt;FOAF MBOX HTTP WWW JOHNSFAIRYTALES COM&lt;/srai&gt;&lt;/li&gt;
+      &lt;li value="johndoe3"&gt;&lt;srai&gt;FOAF MBOX HTTP WWW DEARJOHN COM&lt;/srai&gt;&lt;/li&gt;
+      &lt;li&gt;I know of 3 people with the name "John Doe" &lt;br/&gt;
+      Please enter the number:&lt;br/&gt;
+      [1] Dr. John Doe (aka "Bubba"); [2] John Doe (who knows Simple Simon,
+      Cinderella and Red Riding Hood), [3] John Doe (interests include wine,
+      women, song) [0] none of these&lt;br/&gt;
+      Which John Doe are you asking about?&lt;/li&gt;
+    &lt;/condition&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;*&lt;/pattern&gt;
+  &lt;that&gt;WHICH JOHN DOE ARE YOU ASKING ABOUT&lt;/that&gt;
+  &lt;template&gt;
+    &lt;condition&gt;
+      &lt;li value="1"&gt;
+        &lt;think&gt;&lt;set name="johndoe"&gt;johndoe&lt;star/&gt;&lt;/set&gt;&lt;/think&gt;
+        &lt;srai&gt;FOAF MBOX HTTP WWW DOCBUBBA COM&lt;/srai&gt;&lt;/li&gt;
+      &lt;li value="2"&gt;
+        &lt;think&gt;&lt;set name="johndoe"&gt;johndoe&lt;star/&gt;&lt;/set&gt;&lt;/think&gt;
+        &lt;srai&gt;FOAF MBOX HTTP WWW JOHNSFAIRYTALES COM&lt;/srai&gt;&lt;/li&gt;
+      &lt;li value="3"&gt;
+        &lt;think&gt;&lt;set name="johndoe"&gt;johndoe&lt;star/&gt;&lt;/set&gt;&lt;/think&gt;
+        &lt;srai&gt;FOAF MBOX HTTP WWW DEARJOHN COM&lt;/srai&gt;&lt;/li&gt;
+      &lt;li&gt;I'm sorry I can't help you!&lt;/li&gt;
+    &lt;/condition&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>In this case we added some more descriptive information in the hopes that the user can select the person they are asking about.
+                      Once the user selects, AIMEE proceeds on, just as in the Eric Miller case.  Also notice that in the first <tt class="code">&lt;category&gt;</tt>, the <tt class="code">&lt;condition&gt;</tt> element checks to make sure that AIMEE hasn't already been told which "John Doe" is being discussed. If she already knows,
+                     she won't ask again.
+                     			
+                  <p></p>
+               </div>
+               <div class="subsec1">
+                  <h3><a name="t8-2">
+                        <!-- anchor --></a>foaf:homepage, foaf:workplaceHomepage
+                  </h3>
+                  <p><i>What web pages are associated with Eric Miller?</i>
+ FOAF allows 2 types of home page to be connected to a person, a regular
+ home page and a workplace home page. In this example
+                     we will show all home pages whenever the user asks 
+for a home page and show only the workplace home page if the user asks
+                     for it specifically. The same issue about more than
+ one person sharing a name exists in this case also, but for brevity, we
+                     will not discuss this further in this or subsequent
+ examples. Suffice it to say that the extensions shown in the "John Doe"
+                     example previously would need to be carried forward
+ to any FOAF property that is carried forward into AIML.
+                  </p>
+                  <p>To build the pattern, we need to query the FOAF 
+entry for the person identified by the URI 
+"http://www.w3.org/People/EM/contact#me"
+                     and retrieve all the <tt class="code">&lt;foaf:homepage&gt;</tt> and <tt class="code">&lt;foaf:workplaceHomepage&gt;</tt> elements defined, keeping track of which is which. We will also query for the <tt class="code">&lt;foaf:name&gt;</tt> element. Based on the example above, the query should return three home pages (two personal and one workplace).
+                  </p>
+                  <p>
+                     
+                     </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;FOAF HOMEPAGE HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/pattern&gt;
+  &lt;template&gt;I have 3 home pages listed for
+    &lt;set name="he"&gt;
+      &lt;set name="topic"&gt;Eric Miller&lt;/set&gt;
+    &lt;/set&gt; - [1] &lt;a href="http://purl.org/net/eric/"&gt;http://purl.org/net/eric/&lt;/a&gt;,
+      [2] &lt;a href="http://www.w3.org/People/EM/"&gt;http://www.w3.org/People/EM/&lt;/a&gt;,
+      and [3] (workplace) &lt;a href="http://zepheira.com/"&gt;http://zepheira.com/&lt;/a&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;FOAF WORKPLACEHOMEPAGE HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/pattern&gt;
+  &lt;template&gt;I have 1 workplace home page listed for
+    &lt;set name="he"&gt;
+      &lt;set name="topic"&gt;Eric Miller&lt;/set&gt;
+    &lt;/set&gt; - &lt;a href="http://zepheira.com/"&gt;http://zepheira.com/&lt;/a&gt;.
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;FOAF WORKPLACEHOMEPAGE WHICH ERIC MILLER&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF WORKPLACEHOMEPAGE HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;FOAF HOMEPAGE WHICH ERIC MILLER&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF HOMEPAGE HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ SHOW * ERIC MILLERS HOME PAGE&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF HOMEPAGE WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ SHOW * ERIC MILLERS HOMEPAGE&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF HOMEPAGE WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ SHOW * ERIC MILLERS WORKPLACE HOME PAGE&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF WORKPLACEHOMEPAGE WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ HOMEPAGE * ERIC MILLER _&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF HOMEPAGE WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;_ ERIC MILLER * HOMEPAGE _&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF HOMEPAGE WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>Upon further examination, you can see that any workplace home page was identified as such when the home pages were listed.
+                     They will allow the user to know that they can ask for those types of home pages specifically, if desired.
+                     				
+                  <p></p>
+               </div>
+               <div class="subsec1">
+                  <h3><a name="t8-3">
+                        <!-- anchor --></a>foaf:knows
+                  </h3>
+                  <p><i>Who does Eric Miller know? (and conversely, Who knows Eric Miller?)</i>
+ According to the FOAF spec, "FOAF documents describe the 
+characteristics and relationships amongst friends of friends, and
+                     their friends, and the stories they tell." It is 
+the connectedness of people that has made FOAF as widely used as it is. 
+When
+                     a person creates his or her FOAF entry, they can 
+make the statement that they "know" another person. Conversely, other 
+people
+                     can claim they "know" the first person. It is quite
+ likely that the lists will not be mirror images of each other, but that
+                     might not really be important.
+                  </p>
+                  <p>Another potential application of the <tt class="code">&lt;foaf:knows&gt;</tt> element is something similar to the "Six Degrees of Kevin Bacon" (<a href="http://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon" target="_blank">http://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon</a>)
+ which demonstrates the connectedness of the Hollywood community through
+ working relationships with Kevin Bacon, or with
+                     those who have worked with Kevin Bacon, or those 
+who have worked with Bacon's coworkers, etc. We may find that it is, 
+indeed,
+                     a very small world.
+                  </p>
+                  <p>To build the pattern, we need to query the FOAF 
+entry for the person identified by the URI 
+"http://www.w3.org/People/EM/contact#me"
+                     and retrieve all the <tt class="code">&lt;foaf:knows&gt;</tt> elements defined. We will also query for the <tt class="code">&lt;foaf:name&gt;</tt> element. Based on the example above, the query should return eight resources.
+                  </p>
+                  <p>To build the converse pattern, we need to query for all the instances of the <tt class="code">&lt;foaf:knows&gt;</tt> element that reference the URI "http://www.w3.org/People/EM/contact#me" as well as the associated the <tt class="code">&lt;foaf:name&gt;</tt> elements.
+                  </p>
+                  <p>
+                     
+                     </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;FOAF KNOWN BY HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;set name="he"&gt;
+      &lt;set name="topic"&gt;Eric Miller&lt;/set&gt;
+    &lt;/set&gt; knows the following people: Tim Berners-Lee, Dave Beckett, Tod Matola,
+      Dan Brickley, Stu Weibel, Tom Baker, Dan Connolly and Ralph Swick. &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;FOAF KNOWS HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/pattern&gt;
+  &lt;template&gt;The following people know
+    &lt;set name="he"&gt;
+      &lt;set name="topic"&gt;Eric Miller&lt;/set&gt;
+    &lt;/set&gt;: Tod Matola, Dan Brickley, Stu Weibel, Tim Berners-Lee, Eric Freese,
+      Dave Beckett, and Uche Ogbuji.
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;FOAF KNOWN BY WHICH ERIC MILLER&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF KNOWN BY HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;FOAF KNOWS WHICH ERIC MILLER&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF KNOWS HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;WHO DOES ERIC MILLER KNOW&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF KNOWN BY WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;WHO KNOWS ERIC MILLER&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF KNOWS WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;LIST ERIC MILLERS ACQUAINTANCES&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF KNOWN BY WHICH ERIC MILLER&lt;/srai&gt;
+    &lt;srai&gt;FOAF KNOWS WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>Notice in the last <tt class="code">&lt;category&gt;</tt>
+ element that we decided to combine the lists if the user asks for Eric 
+Miller's acquaintances. In this case, we've assumed
+                     that Eric is somehow acquainted with those who 
+claim to know him, even if he didn't list them in his FOAF profile. Also
+ notice
+                     that we didn't provide any hints for the user to 
+select any of the names listed. This is because names are relatively 
+easy
+                     to enter. This also reduces the number of <tt class="code">&lt;category&gt;</tt> elements that need to be created to handle the entire list of people.
+                     				
+                  <p></p>
+               </div>
+               <div class="subsec1">
+                  <h3><a name="t8-4">
+                        <!-- anchor --></a>foaf:interest
+                  </h3>
+                  <p><i>What are Eric Miller's interests? (and Who shares an interest with Eric Miller?) </i> Shared interests are another area where groups of people can be formed. The topics or subjects of interest could be included
+                     as part of a larger taxonomy that could be used to define broader or narrower areas of interest.
+                  </p>
+                  <p>To build the pattern, we need to query the FOAF 
+entry for the person identified by the URI 
+"http://www.w3.org/People/EM/contact#me"
+                     and retrieve all the <tt class="code">&lt;foaf:interest&gt;</tt> and <tt class="code">&lt;foaf:topic-interest&gt;</tt> elements defined along with their respective titles or names. We will also query for the <tt class="code">&lt;foaf:name&gt;</tt> element.  Based on the example above, the query should return five resources.
+                  </p>
+                  <p>To build the converse pattern, we need to query for all the instances of the <tt class="code">&lt;foaf:interest&gt;</tt> and <tt class="code">&lt;foaf:topic-interest&gt;</tt> elements along with their respective titles or names. For each item of interest we will query for all persons who have stated
+                     an interest in the topic.
+                  </p>
+                  <p>
+                     
+                     </p><div class="codeblock"><pre>&lt;category&gt;
+  &lt;pattern&gt;FOAF INTEREST HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;set name="he"&gt;
+      &lt;set name="topic"&gt;Eric Miller&lt;/set&gt;
+    &lt;/set&gt; expresses interest in the following subjects: RDF Site Summary (RSS),
+      Dublin Core Metadata Initiative, Semantic Web, Resource Description Framework
+      (RDF), and Extensible Markup Language (XML).&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;FOAF INTEREST IN HTTP WWW W3 ORG 2001 SW&lt;/pattern&gt;
+  &lt;template&gt;The following people expressed an interest in
+    &lt;set name="it"&gt;
+      &lt;set name="topic"&gt;Semantic Web&lt;/set&gt;
+    &lt;/set&gt;: Eric Miller, Dan Brickley, Stu Weibel, Tim Berners-Lee, Eric Freese,
+      Bernard Vatant and Uche Ogbuji.
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;FOAF INTEREST WHICH ERIC MILLER&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF INTEREST HTTP WWW W3 ORG PEOPLE EM CONTACT ME&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;WHAT ARE ERIC MILLERS INTERESTS&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF INTEREST WHICH ERIC MILLER&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+  &lt;pattern&gt;WHO IS INTERESTED IN THE SEMANTIC WEB&lt;/pattern&gt;
+  &lt;template&gt;
+    &lt;srai&gt;FOAF INTEREST IN HTTP WWW W3 ORG 2001 SW&lt;/srai&gt;
+  &lt;/template&gt;
+&lt;/category&gt;</pre></div>It should be considered that the lists of names could possibly become very large, which will present a challenge in the user
+                     experience for this information.  Notice in the last <tt class="code">&lt;category&gt;</tt> that we do not set up the check for which "Semantic Web". It is hoped that subjects with the same name are actually somehow
+                     related. This could be differentiated based on the URI if it were found that the assumption is incorrect.
+                     				
+                  <p></p>
+               </div>
+            </div>
+            <div class="section">
+               <h2><a name="t9">
+                     <!-- anchor --></a>Scalability
+               </h2>
+               <p>As can be seen, a single RDF statement can yield 
+several AIML categories. This brings up the issue of scalability. Many 
+AIML
+                  implementations attempt to load the entire brain into 
+RAM each time they are started. This clearly will not work in this 
+application.
+                  A persistent storage method is needed to manage and 
+query the large number of AIML categories and to reduce the necessity
+                  of storing all the categories in RAM. A database will 
+also provide query methods that will allow for rapid searching of the
+                  information. There are several large RDF datasets 
+available and are discussed in the next section. The extension of 
+AIMEE's
+                  brain to include these will demonstrate the 
+scalability of the concept presented in this paper. Unfortunately, this 
+testing
+                  is not complete at the time of this writing.  It is 
+hoped that this issue can be addressed when the paper is presented in
+                  Montreal.
+               </p>
+            </div>
+            <div class="section">
+               <h2><a name="t10">
+                     <!-- anchor --></a>The Linking Open Data Project
+               </h2>
+               <p>The Open Data Movement aims at making data freely 
+available to everyone. There are already various interesting open data 
+sources
+                  available on the Web.  Examples include Wikipedia, 
+Wikibooks, Geonames, Musicbrainz, Wordnet, the DBLP bibliography and 
+many
+                  more which are published under Creative Commons or 
+Talis licenses.
+               </p>
+               <p>The goal of the Linking Open Data project is to build a
+ data commons by making various open data sources available on the
+                  Web as RDF and by setting RDF links between data items
+ from different data sources.  Collectively, the published datasets
+                  currently consist of over one billion RDF triples, 
+which are interlinked by 120,000 RDF links.  Current candidate datasets
+                  include:
+                  				
+                  </p><ul>
+                     <li>DBLP - computer science bibliography</li>
+                     <li>DBpedia - structured information from Wikipedia</li>
+                     <li>DBtune, Jamendo - Creative Commons music repositories</li>
+                     <li>Geonames - world-wide geographical database</li>
+                     <li>Musicbrainz - music and artist database</li>
+                     <li>Project Gutenberg - literary works in the public domain</li>
+                     <li>Revyu - community reviews about anything</li>
+                     <li>RDF Book Mashup - Books from the Amazon API</li>
+                     <li>US Census Data - statistical information about the U.S.</li>
+                     <li>World Factbook - country statistics, compiled by the CIA</li>
+                  </ul>
+                  			
+               <p></p>
+               <p>RDF links enable you to navigate from a data item 
+within one data source to related data items within other sources using
+                  a Semantic Web browser. RDF links can also be followed
+ by the crawlers of Semantic Web search engines, which may provide 
+sophisticated
+                  search and query capabilities over crawled data. As 
+query results are structured data and not just links to HTML pages, they
+                  can be used within other applications.
+               </p>
+               <p>There are already some data publishing efforts. 
+Examples include the DBpedia.org project, the Geonames Ontology, the D2R
+ Server
+                  publishing the DBLP bibliography and the DBtune music 
+server. There are also initial efforts to interlink these data sources.
+                  For instance, the DBpedia RDF descriptions of cities 
+includes <tt class="code">&lt;owl:sameAs&gt;</tt> links to the Geonames data about the city. Another example is the RDF Book Mashup which links book authors to paper authors
+                  within the DBLP bibliography.
+               </p>
+            </div>
+            <div class="section">
+               <h2><a name="t11">
+                     <!-- anchor --></a>Conclusion
+               </h2>
+               <p>This project is demonstrating that the knowledge 
+contained within an RDF dataset can be extracted into an AIML-based bot 
+for
+                  natural language use by the general public.  A 
+methodology for extracting the knowledge has been discussed and 
+demonstrated.
+                   The extraction methodology is also extensible as new 
+patterns are discovered allowing the bot to gain additional 
+"understanding".
+                   A demonstration system shows how these technologies 
+can be connected successfully into a working application.
+               </p>
+            </div>
+            <hr class="hr">
+            <h3><i>Bibliography</i></h3>
+            <p><b><span class="bib">[AIML] </span></b> Wallace, Richard S. AIML tutorial. <a href="http://www.pandorabots.com/pandora/pics/wallaceaimltutorial.html" target="_blank">http://www.pandorabots.com/pandora/pics/wallaceaimltutorial.html</a></p>
+            <p><b><span class="bib">[AJF] </span></b> Faaborg, Alexander J. Leveraging Metadata for Natural Language Processing: Dublin Core XML to AIML Conversion. 2001.
+            </p>
+            <p><b><span class="bib">[DCMI] </span></b> Dublin Core Metadata Element Set, Version 1.1. 2006. <a href="http://www.dublincore.org/documents/dces/" target="_blank">http://www.dublincore.org/documents/dces/</a></p>
+            <p><b><span class="bib">[EDF] </span></b> Freese, Eric. From Metadata to Personal Semantic Webs. 2006.
+            </p>
+            <p><b><span class="bib">[RDF] </span></b> RDF Primer. <a href="http://www.w3.org/TR/rdf-primer/" target="_blank">http://www.w3.org/TR/rdf-primer/</a></p>
+            <p><b><span class="bib">[RDF2] </span></b> Tauberer, Joshua. What is RDF? 2006. <a href="http://www.xml.com/pub/a/2001/01/24/rdf.html" target="_blank">http://www.xml.com/pub/a/2001/01/24/rdf.html</a></p>
+            <p><b><span class="bib">[RSW] </span></b> Wallace, Richard S. The Elements of AIML Style. 2003.
+            </p>
+            <p><b><span class="bib">[RSW2] </span></b> Wallace, Richard S. Be Your Own Botmaster. 2005.
+            </p>
+            <p><b><a name="TT" href="#fromTT">[TT] </a></b> "Turing test" <a href="http://en.wikipedia.org/wiki/Turing_test" target="_blank">http://en.wikipedia.org/wiki/Turing_test</a></p>
+            <hr class="hr">
+            <hr class="hr">
+            <p class="footertitle">Enhancing AIML Bots using Semantic Web Technologies</p>
+            <address>Eric Freese [LexisNexis]<br class="br"><a href="mailto:eric%20%28dot%29%20freese%20%28at%29%20lexisnexis%20%28dot%29%20com" class="mailto">eric (dot) freese (at) lexisnexis (dot) com</a></address>
+            <hr class="hr">
+         </div>
+      </div>
+   
+</body></html>
