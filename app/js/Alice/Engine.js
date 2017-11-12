@@ -1,53 +1,5 @@
 'use strict';
 
-/**
- * 
- * 
- * Parser
-
-    aiml.parse(xml, callback) - parse string with AIML Xml.
-    aiml.parseFiles(files, callback) - parse file or files.
-    aiml.parseDir(dir, callback) - parse all files in specified directory.
-
-* Engine
-
-Engine constructor: var engine = new aiml.AiEngine(roomName, topics, botData)
-Parameters
-
-    roomName - (required) name of chat room.
-    topics - (required) array of topics(parser results).
-    botData - (optional) bot metadata (name, version, gender, etc.).
-
-Main awesome function: engine.reply(authorData, message, callback)
-
-* Parameters
-
-    authorData - (required) message author metadata (name, age, etc.).
-    message - (required) just message.
-	callback - (required) classic js callback, nothing special: )
-	
- */
-
-
- /**
-  * 
-  
- 	HOW TO USE:
-
-	var Engine = require("Engine.js");
-	var engine = new Engine();
-
-	engine.run('Default', {name: 'Lucy'});
-
-	engine.out(
-		{name: 'Gallardo'},
-		"Lucy, canta una canción", 
-		function(err, responce){
-			console.log(responce);
-		}
-	);
-
-*/
 
 //Captions.js
 module.exports = function(params) {
