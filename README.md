@@ -2,20 +2,22 @@
 
 CAUTION:
 THIS BRANCH IS NOT OVER PRODUCTION -- KEEP OUT
-THIS STAFF, IT JUST HOLD DOWNGRADES AND OUTDATED
-PIECES AS PURGE PRE-STATE!!
+THIS STAFF, IT JUST HOLDS DOWNGRADES AND OUTDATED
+PIECES AS A PURGE PRE-STATE!!
 
 THIS CONTENT IS TO BE USED ONLY BY TECH WITH RECYCLING
 PURPOSES.
 
-SEE MASTER BRANCH TO GET SAVE AND RUNNING SOFT.
+SEE MASTER BRANCH TO GET SAFE AND RUNNING SOFT.
 -------------------------------------------------------------------
 
 
 
-From now on, inside this package, **Lucy is software**. Alice and Bob are for agents, two humans and two TIC devices that will only support Lucy's topics and soon will be deprecated. So, target is Lucy.
+From now on, inside this package, **Lucy is software**. Alice and Bob are four other agents: two humans and two TIC devices that will be important to support Lucy's topics and creation. They all will be soon deprecated. So, the target of this project is Lucy.
 
-**Alice** can be both an IoT thing and also a brilliant CEO at Silicon Valley TIC building. **Bob**, also, like Alice, can be both a broker cluster and also and indian working sysadmin at Bangladesh just beside his mom and cousins, on a middle-class neighbour.
+**Alice** can be both an IoT thing and also a brilliant CEO at Silicon Valley TIC building. **Bob**, also, like Alice, can be both a broker cluster and an indian worker, sysadmin at Bangladesh just beside his mom and cousins, on a middle-class neighbourhood office.
+
+Lucy, at its minimum, from 2011 has been 24/7 running at Alice and Bob's offices. So there we have at least two stable instances of this code. As bots training and learning, these two Lucys own each one a memory database over its contexts and conversational capabilities and user interaction patterns. Alice and Bob come together oftern to replicate and swift their database, although Alice is always more interested on semantics while Bob derivates to traffic.
 
 Alice is working on Alice. Bob is working on Bob. Meaning that the northamerican tech girl is working on a so called Debian 9 distribution **Alice like a virtual machine with MQTT clients plugged to some things; like a M2M control panel**. While indian tech supports **Bob as a network of brokers, mainly Kafka clusters to Alice clients, MQTT hive**. 
 
